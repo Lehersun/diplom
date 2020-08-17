@@ -73,16 +73,8 @@ $(function () {
     }
   });
 
-  var a = document.getElementById("new-popup-window__form");
-  var b = document.getElementsByClassName('new-popup-window__form');
-  console.log(a);
-  console.log(b);
 
 
-  $(".new-popup-window__form").submit(function () {
-    event.preventDefault();
-
-  });
   // Валидация формы
 
   // $(".new-popup-window__form").submit(function () {
