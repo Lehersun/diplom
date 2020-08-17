@@ -1,19 +1,10 @@
 /* CALL-BACK-WINDOW  */
-@media (max-width: 1200px) {
-  .callback_window {
-    top: 20%;
-    width: 10px;
-    max-width: 90%;
-    padding: 10px;
+@media (max-width: 650px) {
+  .new-popup-window {
+    width: 300px;
+    padding: 25px;
   }
 
-  .callback_window__close-button {
-    top: -15px;
-    left: -15px;
-    height: 30px;
-    width: 30px;
-    background-size: 100%;
-  }
 }
 
 /* HEADER */

@@ -1,10 +1,15 @@
 $(function () {
+
+  //Летающие символы
+
   let i = 1;
   while (i <= 5) {
     $(".flying__symbol:nth-child(" + i + ")").addClass("symbol" + i);
     i++;
   }
 
+
+  //Меню
   $(".menu__button").click(function () {
     $(".menu__button").toggleClass("menu__button__opened");
     $(".header__top nav").slideToggle(".header__top nav");
@@ -31,127 +36,83 @@ $(function () {
     }
   });
 
-  // callback_window
+  // Заказать звонок
 
-  $("body").append(
-    `
-    <div class="callback_window">
-    <form class="callback_window__form">
-      <label>* Номер телефона (в десятизначном формате)
-         <input class="callback_window__phone" type="text" name="guest_phone" placeholder="1234567890"
-          maxlength="10">
-      </label>
-      
-
-      <label>* Имя
-        <input class="callback_window__name" name="guest_phone" placeholder="Джон" maxlength="30"></input>
-      </label>
-
-      <label>Коментарий
-        <textarea class="callback_window__comment" name="guest_phone" placeholder="Хочу заказать сайт"
-          maxlength="200"></textarea>
-      </label>
-
-      <button class="callback_window__send-button" type="submit">Заказать звонок</button>
-    </form>
-    <button class="callback_window__close-button" type="button" name="callback_window__close-button"></button>
-  </div>
-    `
-  );
-
-  function callbutton() {
-    $(".callback_window").animate({
-      width: "400px"
-    }, 400);
-    $(".callback_window__close-button").css("transform", "rotate(180deg)");
-
-    $(".callback_window__form").css("display", "block");
-  }
-
-  function hide_showcall() {
-    let call_width = $(".callback_window").width();
-    if (call_width > 200) {
-      $(".callback_window__form").css("display", "none");
-      $(".callback_window").animate({
-        width: "0"
-      }, 400);
-      $(".callback_window__close-button").css("transform", "rotate(0deg)");
-    } else {
-      $(".callback_window").animate({
-        width: "400px"
-      }, 400);
-      $(".callback_window__close-button").css("transform", "rotate(180deg)");
-      $(".callback_window__form").css("display", "block");
-    }
-  }
-
-  function scroll_top() {
-    $("body,html").animate({
-        scrollTop: 0,
-      },
-      700
-    );
-  }
-
-  $(".call__button").click(callbutton);
-
-  $(".show__more__button").click(function () {
-    callbutton();
+  $('.call__button').click(function () {
+    disableScroll();
+    $('.new-popup-background').css("display", "block");
+    $('.new-popup-window').css("display", "block")
+    $(".new-popup-window").animate({
+      opacity: 1,
+      height: "300",
+    }, 300, function () {
+      $('body').css("overflow", "hidden")
+    });
   });
 
-  $(".first_section__button").click(function () {
-    callbutton();
+  $('.new-popup-window__close-button').click(function () {
+    enableScroll();
+
+    $(".new-popup-window").animate({
+      opacity: 0.25,
+      height: "0"
+    }, 300, function () {
+      $('.new-popup-background').css("display", "none");
+      $('body').css("overflow", "visible")
+    });
   });
 
-  $(".second__section__button").click(function () {
-    callbutton();
-  });
+  // МАСКА для ввода 
+  const form_phone = $('.new-popup-window__phone');
+  const form_name = $('.new-popup-window__name');
 
-  $(".footer__call__button").click(function () {
-    callbutton();
-  });
-
-  $(".callback_window__close-button").click(hide_showcall);
-
-
-
-  const form_phone = $('.callback_window__phone');
-  const form_name = $('.callback_window__name');
-
-
-  form_phone.bind("change keyup input click", function () {
-    if (this.value.match(/[^0-9]/g)) {
-      this.value = this.value.replace(/[^0-9]/g, '');
-    }
-  });
-
+  form_phone.mask('+7(000)000-00-00');
   form_name.bind("change keyup input click", function () {
     if (this.value.match(/[^а-яА-Яa-zA-Z\s]/g)) {
       this.value = this.value.replace(/[^а-яА-Яa-zA-Z\s]/g, '');
     }
   });
 
-  $(".callback_window__form").submit(function () {
+  var a = document.getElementById("new-popup-window__form");
+  var b = document.getElementsByClassName('new-popup-window__form');
+  console.log(a);
+  console.log(b);
+
+
+  $(".new-popup-window__form").submit(function () {
     event.preventDefault();
 
-    if (form_phone.val().trim() && form_name.val().trim()) {
-
-      alert(
-        "Ваша заявка на звонок принята. Мы перезвоним Вам в ближайшее время."
-      );
-      hide_showcall();
-      form_phone.removeClass("error");
-      form_name.removeClass("error");
-
-      form_phone.val(' ');
-      form_name.val(' ');
-
-    } else {
-      alert("Следующие поля не могут быть пустыми");
-      form_phone.addClass("error");
-      form_name.addClass("error");
-    }
   });
+  // Валидация формы
+
+  // $(".new-popup-window__form").submit(function () {
+
+  //   let phonenumber = form_phone.val().length;
+  //   event.preventDefault();
+  //   if (form_phone.val() && form_name.val()) {
+  //     if (phonenumber == 16) {
+  //       alert(
+  //         "Ваша заявка на звонок принята. Мы перезвоним Вам в ближайшее время."
+  //       );
+  //       form_phone.removeClass("error");
+  //       form_name.removeClass("error");
+
+  //       form_phone.val(' ');
+  //       form_name.val(' ');
+  //       $(this).submit();
+
+  //     } else {
+
+  //       console.log('error');
+  //     }
+  //   } else {
+
+  //     alert("Следующие поля не могут быть пустыми");
+  //     form_phone.addClass("error");
+  //     form_name.addClass("error");
+  //   }
+  // });
+
 
   // owl-carousel
 
@@ -177,3 +138,4 @@ $(function () {
     },
   });
 });
+//
