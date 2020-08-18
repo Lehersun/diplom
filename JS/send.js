@@ -2,25 +2,61 @@ window.addEventListener("DOMContentLoaded", function () {
 
     // get the form elements defined in your form HTML above
 
-    var form = document.getElementById("new-popup-window__form");
+    var form = $(".new-popup-window__form")[0];
 
     // Success and Error functions for after the form is submitted
 
     function success() {
         form.reset();
-        alert('Заебись! Все пашет!')
+        alert(
+            "Ваша заявка на звонок принята. Мы перезвоним Вам в ближайшее время"
+        );
     }
 
     function error() {
-        status.innerHTML = "Oops! There was a problem.";
+        alert(
+            "К сожалению сервис сейчас не работает. Попробуйте снова через несколько минут"
+        );
     }
 
     // handle the form submission event
 
     form.addEventListener("submit", function (ev) {
+        const form_phone = $('.new-popup-window__phone');
+        const form_name = $('.new-popup-window__name');
+
+        const phonenumber = form_phone.val().length;
         ev.preventDefault();
-        var data = new FormData(form);
-        ajax(form.method, form.action, data, success, error);
+        if (form_phone.val() && form_name.val()) {
+            if (phonenumber == 16) {
+
+                form_phone.removeClass("error");
+                form_name.removeClass("error");
+
+                var data = new FormData(form);
+                ajax(form.method, form.action, data, success, error);
+
+                form_phone.val(' ');
+                form_name.val(' ');
+
+
+            } else {
+
+                console.log('error');
+            }
+        } else {
+
+            alert("Следующие поля не могут быть пустыми");
+            form_phone.addClass("error");
+            form_name.addClass("error");
+        }
+
+
+
+
+
+
+
     });
 });
 

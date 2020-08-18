@@ -1,4 +1,4 @@
-$(function () {
+$(document).ready(function () {
 
   //Летающие символы
 
@@ -36,7 +36,7 @@ $(function () {
     }
   });
 
-  // Заказать звонок
+  // Всплывающее окно "Заказать звонок"
 
   $('.call__button').click(function () {
     disableScroll();
@@ -89,9 +89,11 @@ $(function () {
   //       form_phone.removeClass("error");
   //       form_name.removeClass("error");
 
+  //       $(this).submit();
+
   //       form_phone.val(' ');
   //       form_name.val(' ');
-  //       $(this).submit();
+
 
   //     } else {
 
