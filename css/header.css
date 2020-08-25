@@ -171,7 +171,7 @@ header {
     position: absolute;
     bottom: -55px;
     right: -110px;
-    background: url(../img/man_shade.png) no-repeat;
+    background: url(../img/man_shade.webp) no-repeat;
     background-size: 105%;
     height: 700px;
     width: 500px;
@@ -182,7 +182,7 @@ header {
     position: absolute;
     top: 18px;
     left: 45px;
-    background: url(../img/man.png) no-repeat;
+    background: url(../img/man.webp) no-repeat;
     height: 630px;
     width: 440px;
     z-index: 2;
