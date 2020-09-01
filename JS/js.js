@@ -63,7 +63,7 @@ $(document).ready(function () {
   const popupmin = $(` 
     <div class="popup-background">
       <div class="popup-window">
-        <form>
+        <form class="feedback">
           <label>* Номер телефона
             <input class="popup-window__phone" type="text" name="name" placeholder="+7(123)456-78-90">
           </label>
@@ -83,7 +83,7 @@ $(document).ready(function () {
   const popupmax = $(` 
     <div class="popup-background">
       <div class="popup-window popupmax">
-        <form id="feedback">
+        <form class="feedback">
           <label>* Номер телефона
             <input class="popup-window__phone" type="text" name="phone" placeholder="+7(123)456-78-90">
           </label>
@@ -272,16 +272,15 @@ $(document).ready(function () {
       }
     });
   });
-
-
 });
 
 function sendAjaxForm(feedback, url) {
+
   $.ajax({
     url: url, //url страницы (ajax-form.php)
     type: "POST", //метод отправки
     dataType: "html", //формат данных
-    data: $("#" + feedback).serialize(), // Сеарилизуем объекты формы
+    data: $(("." + feedback)).serialize(), // Сеарилизуем объекты формы
     success: function (response) { //Данные отправлены успешно
 
       //Ваш код если успешно отправлено
