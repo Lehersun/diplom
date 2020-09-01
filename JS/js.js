@@ -83,7 +83,7 @@ $(document).ready(function () {
   const popupmax = $(` 
     <div class="popup-background">
       <div class="popup-window popupmax">
-        <form>
+        <form id="feedback">
           <label>* Номер телефона
             <input class="popup-window__phone" type="text" name="phone" placeholder="+7(123)456-78-90">
           </label>
