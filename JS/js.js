@@ -138,15 +138,17 @@ $(document).ready(function () {
     let popupclosebutton = $(this).find('popup-window__close-button');
     let screenwidth = $(window).width();
     let labellength = $(this).find('label').length;
+
     disableScroll();
 
     $(this).css("display", "block");
+    popupwindow.find('.popup-window__message').remove();
     popupwindow.show();
     popupform.show();
     popupclosebutton.css("display", "block");
     popupwindow.animateRotate(720, 500);
-
-    if (labellength <= 2) {
+    console.log(labellength);
+    if (labellength <= 3) {
       if (screenwidth > 750) {
         popupwindow.animate({
 
@@ -180,7 +182,6 @@ $(document).ready(function () {
         height: "600",
         width: "320",
       }, 500, );
-
     }
   }
 
@@ -192,7 +193,6 @@ $(document).ready(function () {
     let popupform = $(this).parent().find('form');
 
     popupform.hide();
-    popupwindow.find('.popup-window__message').remove();
     popupform.find('input').val('');
     popupform.find('textarea').val('');
     popupwindow.animateRotate(720, 500);
@@ -270,7 +270,7 @@ $(document).ready(function () {
       /*Отправка формы в случае успеха валидации*/
       submitHandler: function () {
         sendAjaxFormmax('formmax', 'ajax-form.php'); //Вызываем функцию отправки формы
-        popup = $('.formmax').parent().find('.popup-window__close-button');
+        let popup = $('.formmax').parent().find('.popup-window__close-button');
         let closepopupmax = closepopup.bind(popup); //Передаем функции closepopup параметры переменной popupmax в качестве this
         setTimeout(closepopupmax, 1500);
         return false;
@@ -305,8 +305,7 @@ $(document).ready(function () {
       /*Отправка формы в случае успеха валидации*/
       submitHandler: function () {
         sendAjaxFormmax('formmin', 'ajax-form.php'); //Вызываем функцию отправки формы
-
-        popup = $('.formmin').parent().find('.popup-window__close-button');
+        let popup = $('.formmin').parent().find('.popup-window__close-button');
         let closepopupmin = closepopup.bind(popup); //Передаем функции closepopup параметры переменной popupmax в качестве this
         setTimeout(closepopupmin, 1500);
         return false;
@@ -341,7 +340,7 @@ function sendAjaxFormmax(formmax, url) {
   });
 };
 
-function sendAjaxFormmin(formmin, url) {
+function sendAjaxFormmax(formmin, url) {
 
   $.ajax({
     url: url, //url страницы (ajax-form.php)
