@@ -193,8 +193,8 @@ $(document).ready(function () {
 
     popupform.hide();
     popupwindow.find('.popup-window__message').remove();
-    popupform.find('input').val(' ');
-    popupform.find('textarea').val(' ');
+    popupform.find('input').val('');
+    popupform.find('textarea').val('');
     popupwindow.animateRotate(720, 500);
     popupwindow.animate({
 
