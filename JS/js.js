@@ -63,7 +63,7 @@ $(document).ready(function () {
   const popupmin = $(` 
     <div class="popup-background">
       <div class="popup-window">
-        <form class="feedback">
+        <form class="formmin">
           <label>* Номер телефона
             <input class="popup-window__phone" type="text" name="name" placeholder="+7(123)456-78-90">
           </label>
@@ -83,7 +83,7 @@ $(document).ready(function () {
   const popupmax = $(` 
     <div class="popup-background">
       <div class="popup-window popupmax">
-        <form class="feedback">
+        <form class="formmax">
           <label>* Номер телефона
             <input class="popup-window__phone" type="text" name="phone" placeholder="+7(123)456-78-90">
           </label>
@@ -234,19 +234,19 @@ $(document).ready(function () {
     }
   });
 
-  $('button[type="submit"]').click(function () {
+  $('.formmax').children('button').click(function () {
 
     /*Валидация полей формы*/
-    $(this).parent().validate({
+    $('.formmax').validate({
       //Правила валидации
       rules: {
         name: {
           required: true,
         },
-        // email: {
-        //   required: true,
-        //   email: true
-        // },
+        email: {
+          required: true,
+          email: true
+        },
         phone: {
           required: true,
         },
@@ -267,20 +267,20 @@ $(document).ready(function () {
 
       /*Отправка формы в случае успеха валидации*/
       submitHandler: function () {
-        sendAjaxForm('feedback', 'ajax-form.php'); //Вызываем функцию отправки формы
+        sendAjaxForm('formmax', 'ajax-form.php'); //Вызываем функцию отправки формы
         return false;
       }
     });
   });
 });
 
-function sendAjaxForm(feedback, url) {
+function sendAjaxForm(formmax, url) {
 
   $.ajax({
     url: url, //url страницы (ajax-form.php)
     type: "POST", //метод отправки
     dataType: "html", //формат данных
-    data: $(("." + feedback)).serialize(), // Сеарилизуем объекты формы
+    data: $(("." + formmax)).serialize(), // Сеарилизуем объекты формы
     success: function (response) { //Данные отправлены успешно
 
       //Ваш код если успешно отправлено
