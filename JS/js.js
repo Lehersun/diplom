@@ -20,8 +20,7 @@ $(document).ready(function () {
 
     let offset = $(href).offset().top;
 
-    $("body,html").animate(
-      {
+    $("body,html").animate({
         scrollTop: offset,
       },
       700
@@ -60,95 +59,173 @@ $(document).ready(function () {
   });
 
   // Всплывающее окно "Заказать звонок"
-  var popupwindow =
-    '<div class="new-popup-background"><div class="new-popup-window"><form class="new-popup-window__form" id="new-popup-window__form" action="https://formspree.io/mnqgyqjp"method="POST"><label>* Номер телефона<input class="new-popup-window__phone" type="text" name="guest_phone" placeholder="+7(123)456-78-90"><p class="speech">Проверьте правильность ввода</p></label><label>* Имя<input class="new-popup-window__name" name="guest_phone" placeholder="Джон" maxlength="30"></input></label><button class="new-popup-window__send-button" type="submit" value="send">Заказать звонок</button></form><button class="new-popup-window__close-button" type="button" name="callback_window__close-button"></button></div></div>';
-  var popupwindownore =
-    '<div class="showmore-popup-background"><div class="showmore-popup-window"><form class="showmore-popup-window__form" action="https://formspree.io/mnqgyqjp" method="POST"><label>* Номер телефона<input class="showmore-popup-window__phone" type="text" name="guest_phone" placeholder="+7(123)456-78-90"><p class="showmore__speech">Проверьте правильность ввода</p></label><label>* Имя<input class="showmore-popup-window__name" name="guest_name" placeholder="Джон" maxlength="30"></input></label><label>* E-mail адрес<input class="showmore-popup-e-mail" name="guest_e-mail" placeholder="example@example.ru"maxlength="40"></input></label><label> Дополнительная информация<textarea class="showmore-popup-comment" name="comment" placeholder="Что нам стоит дом построить?"maxlength="400"></textarea></label><button class="showmore-popup-window__send-button" type="submit" value="send">Отправить заявку</button></form><button class="showmore-popup-window__close-button" type="button" name="callback_window__close-button"></button></div></div>';
 
-  $(popupwindow).appendTo("body");
+  const popupmin = $(` 
+    <div class="popup-background">
+      <div class="popup-window">
+        <form id="feedback">
+          <label>* Номер телефона
+            <input class="popup-window__phone" type="text" name="name" placeholder="+7(123)456-78-90">
+          </label>
 
-  $(popupwindownore).appendTo("body");
+          <label>* Имя
+            <input class="popup-window__name" name="phone" placeholder="Джон" maxlength="30"></input>
+          </label>
 
-  function opencallwindow() {
+          <button class="popup-window__send-button" type="submit" value="send">Заказать звонок</button>
+        </form>
+        
+        <button class="popup-window__close-button" type="button" name="popup-window__close-button"></button>
+      </div>
+    </div>`);
+
+  // Всплывающее окно "Обратной связи"
+  const popupmax = $(` 
+    <div class="popup-background">
+      <div class="popup-window popupmax">
+        <form>
+          <label>* Номер телефона
+            <input class="popup-window__phone" type="text" name="phone" placeholder="+7(123)456-78-90">
+          </label>
+
+          <label>* Имя
+            <input class="popup-window__name" name="name" placeholder="Джон" maxlength="30"></input>
+          </label>
+
+          <label>* E-mail адрес
+            <input class="popup-window-e-mail" name="email" placeholder="example@example.ru" maxlength="40"></input>
+          </label>
+
+          <label> Дополнительная информация 
+            <textarea class="popup-window-comment" name="comment" placeholder="Что нам стоит дом построить?"
+          maxlength="400"></textarea>
+          </label>
+            <button class="popup-window__send-button" type="submit" value="send">Заказать звонок</button>
+        </form>
+        
+        <button class="popup-window__close-button" type="button" name="popup-window__close-button"></button>
+      </div>
+    </div>`);
+
+  $('body').append(popupmin);
+  $('body').append(popupmax);
+
+  // Функция rotate
+
+  $.fn.animateRotate = function (angle, duration, easing, complete) {
+    let args = $.speed(duration, easing, complete);
+    let step = args.step;
+    return this.each(function (i, e) {
+      args.complete = $.proxy(args.complete, e);
+      args.step = function (now) {
+        $.style(e, 'transform', 'rotate(' + now + 'deg)');
+        if (step) return step.apply(e, arguments);
+      };
+
+      $({
+        deg: 0
+      }).animate({
+        deg: angle
+      }, args);
+    });
+  };
+
+  // Анимация открытия окна
+
+  function openpopup() {
+    let popupwindow = $(this).find('.popup-window');
+    let popupform = $(this).find('form');
+    let popupclosebutton = $(this).find('popup-window__close-button');
+    let screenwidth = $(window).width();
+    let labellength = $(this).find('label').length;
     disableScroll();
-    $(".new-popup-background").css("display", "block");
-    $(".new-popup-window").animate(
-      {
-        opacity: 1,
-        height: "320",
-      },
-      300,
-      function () {
-        $("body").css("overflow", "hidden");
+
+    $(this).css("display", "block");
+    popupwindow.show();
+    popupform.show();
+    popupclosebutton.css("display", "block");
+
+    popupwindow.animateRotate(720, 500);
+
+    if (labellength <= 2) {
+      if (screenwidth > 750) {
+        popupwindow.animate({
+
+          padding: "45",
+          opacity: 1,
+          height: "320",
+          width: "500",
+        }, 500, );
+      } else {
+        popupwindow.animate({
+
+          padding: "35",
+          opacity: 1,
+          height: "300",
+          width: "320",
+        }, 500, );
       }
-    );
-  }
+    } else if (screenwidth > 750) {
+      popupwindow.animate({
 
-  function closecallwindow() {
-    enableScroll();
-
-    $(".new-popup-window").animate(
-      {
-        opacity: 0.25,
-        height: "0",
-      },
-      300,
-      function () {
-        $(".new-popup-background").css("display", "none");
-        $("body").css("overflow", "visible");
-      }
-    );
-  }
-
-  $(".call__button").click(opencallwindow);
-  $(".footer__call__button").click(opencallwindow);
-  $(".new-popup-window__close-button").click(closecallwindow);
-
-  // Всплывающее окно "Обратная связь"
-  function openshowmorewindow() {
-    disableScroll();
-    $(".showmore-popup-background").css("display", "block");
-    $(".showmore-popup-window").animate(
-      {
+        padding: "45",
         opacity: 1,
         height: "550",
-      },
-      300,
-      function () {
-        $("body").css("overflow", "hidden");
-      }
-    );
+        width: "500",
+      }, 500, );
+    } else {
+      popupwindow.animate({
+
+        padding: "35",
+        opacity: 1,
+        height: "550",
+        width: "320",
+      }, 500, );
+
+    }
   }
 
-  function closeshowmorewindow() {
-    enableScroll();
+  // Анимация закрытия окна
 
-    $(".showmore-popup-window").animate(
-      {
-        opacity: 0.25,
-        height: "0",
-      },
-      300,
-      function () {
-        $(".showmore-popup-background").css("display", "none");
-        $("body").css("overflow", "visible");
-      }
-    );
+
+  function closepopup() {
+    let popupwindow = $(this).parent();
+    let popupform = $(this).parent().find('form');
+
+    popupform.hide();
+    popupwindow.animateRotate(720, 500);
+    popupwindow.animate({
+
+      padding: "0",
+      opacity: 0.25,
+      height: "0",
+      width: "0",
+    }, 500, function () {
+      popupwindow.parent().hide();
+      enableScroll();
+    });
   }
 
-  $(".show__more__button").click(openshowmorewindow);
-  $(".first_section__button").click(openshowmorewindow);
-  $(".second__section__button").click(openshowmorewindow);
-  $(".showmore-popup-window__close-button").click(closeshowmorewindow);
+  // Вызов функций на нажатие кнопки
+
+  $('.popupminbutton').click(function () {
+    let openpopupmin = openpopup.bind(popupmin); //Передаем функции openpopup параметры переменной popupmin в качестве this
+    openpopupmin();
+  });
+
+  $('.popupmaxbutton').click(function () {
+    let openpopupmax = openpopup.bind(popupmax); //Передаем функции openpopup параметры переменной popupmax в качестве this
+    openpopupmax();
+  });
+
+  $('.popup-window__close-button').click(function () {
+    closepopup.call(this);
+  });
 
   // МАСКА для ввода
-  const form_phone = $(".new-popup-window__phone");
-  const form_name = $(".new-popup-window__name");
-  const showmore_form_phone = $(".showmore-popup-window__phone");
-  const showmore_form_name = $(".showmore-popup-window__name");
-  const showmore_form_mail = $("showmore-popup-e-mail");
+  const form_phone = $(".popup-window__phone");
+  const form_name = $(".popup-window__name");
 
-  showmore_form_phone.mask("+7(000)000-00-00");
   form_phone.mask("+7(000)000-00-00");
 
   form_name.bind("change keyup input click", function () {
@@ -157,87 +234,63 @@ $(document).ready(function () {
     }
   });
 
-  showmore_form_name.bind("change keyup input click", function () {
-    if (this.value.match(/[^а-яА-Яa-zA-Z\s]/g)) {
-      this.value = this.value.replace(/[^а-яА-Яa-zA-Z\s]/g, "");
-    }
-  });
+  $('button[type="submit"]').click(function () {
 
-  // showmore_form_mail.onblur = function () {
-  //   if (!$(this).value.includes("@")) {
-  //     // не email
-  //     $(this).classList.add("error");
-  //     error.innerHTML = "Пожалуйста, введите правильный email.";
-  //   }
-  // };
+    /*Валидация полей формы*/
+    $(this).parent().validate({
+      //Правила валидации
+      rules: {
+        name: {
+          required: true,
+        },
+        email: {
+          required: true,
+          email: true
+        },
+        phone: {
+          required: true,
+        },
 
-  ///Отправка формы
+      },
+      //Сообщения об ошибках
+      messages: {
+        name: {
+          required: "Обязательно укажите имя",
+        },
+        email: {
+          required: "Обязательно укажите Email",
+        },
+        phone: {
+          required: "Укажите номер телефона",
+        },
+      },
 
-  var form = $(".new-popup-window__form")[0];
-
-  // Success and Error functions for after the form is submitted
-
-  function success() {
-    form.reset();
-    alert("Ваша заявка на звонок принята. Мы перезвоним Вам в ближайшее время");
-  }
-
-  function error() {
-    alert("К сожалению сервис сейчас не работает. Попробуйте позже");
-  }
-
-  // handle the form submission event
-
-  form.addEventListener("submit", function (ev) {
-    const form_phone = $(".new-popup-window__phone");
-    const form_name = $(".new-popup-window__name");
-    const container = $(".speech");
-
-    const phonenumber = form_phone.val().length;
-    ev.preventDefault();
-    if (form_phone.val().trim() && form_name.val().trim()) {
-      if (phonenumber == 16) {
-        form_phone.removeClass("error");
-        form_name.removeClass("error");
-        closecallwindow();
-        var data = new FormData(form);
-        ajax(form.method, form.action, data, success, error);
-      } else {
-        form_phone.addClass("error");
-        $(".speech").show();
-      }
-    } else {
-      form_phone.addClass("error");
-      form_name.addClass("error");
-      form_phone.attr("placeholder", "Поле не может быть пустым");
-      form_name.attr("placeholder", "Поле не может быть пустым");
-    }
-    $(document).mouseup(function (e) {
-      if (container.has(e.target).length === 0) {
-        container.hide();
-        form_phone.removeClass("error");
-        form_name.removeClass("error");
-        if (form_phone.attr("placeholder") === "Поле не может быть пустым") {
-          form_phone.attr("placeholder", "+7(123)456-78-90");
-          form_name.attr("placeholder", "Джон");
-        }
+      /*Отправка формы в случае успеха валидации*/
+      submitHandler: function () {
+        sendAjaxForm('feedback', 'ajax-form.php'); //Вызываем функцию отправки формы
+        return false;
       }
     });
   });
-});
-//// helper function for sending an AJAX request
 
-function ajax(method, url, data, success, error) {
-  var xhr = new XMLHttpRequest();
-  xhr.open(method, url);
-  xhr.setRequestHeader("Accept", "application/json");
-  xhr.onreadystatechange = function () {
-    if (xhr.readyState !== XMLHttpRequest.DONE) return;
-    if (xhr.status === 200) {
-      success(xhr.response, xhr.responseType);
-    } else {
-      error(xhr.status, xhr.response, xhr.responseType);
+
+});
+
+function sendAjaxForm(feedback, url) {
+  $.ajax({
+    url: url, //url страницы (ajax-form.php)
+    type: "POST", //метод отправки
+    dataType: "html", //формат данных
+    data: $("#" + feedback).serialize(), // Сеарилизуем объекты формы
+    success: function (response) { //Данные отправлены успешно
+
+      //Ваш код если успешно отправлено
+      alert('Успешно отправлено!');
+    },
+    error: function (response) { // Данные не отправлены
+
+      //Ваш код если ошибка
+      alert('Ошибка отправления');
     }
-  };
-  xhr.send(data);
-}
+  });
+};

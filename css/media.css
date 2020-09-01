@@ -1,20 +1,9 @@
 /* POPUP-WINDOW  */
 @media (max-width: 650px) {
-  .new-popup-window {
-    width: 300px;
-    padding: 25px;
-  }
-
-  .speech {
-    top: -10px;
-  }
 
 
-  .showmore-popup-window {
-    width: 300px;
+  .popupmax {
     margin: 5vh auto 0;
-    padding: 20px;
-
   }
 }
 

@@ -49,6 +49,7 @@ function disableScroll() {
       passive: false
     } : false); // mobile
   document.onkeydown = preventDefaultForScrollKeys;
+
 }
 
 function enableScroll() {

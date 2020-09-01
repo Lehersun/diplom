@@ -24,13 +24,14 @@
   <script defer src="JS/modernizr-custom.js"></script>
   <script defer src="JS/jquery.mask.min.js"></script>
   <script defer src="JS/disable-scroll.js"></script>
+  <script defer src="JS/validator/jquery.validate.min.js"></script>
+  <script defer src="JS/validator/localization/messages_ru.min.js"></script>
   <script defer src="JS/js.js"></script>
 
   <title>Дипломная работа Бойченко Алексея</title>
 </head>
 
 <body>
-
   <header>
     <span class="flying__symbol">{ }</span>
     <span class="flying__symbol">#</span>
@@ -52,7 +53,7 @@
 
         <div class="header__top__right">
           <a href="tel:+74999955577" class="phone__number">+7 (499) 995-55-77</a>
-          <button class="call__button" type="button">
+          <button class="call__button popupminbutton" type="button">
             <span>Заказать звонок</span>
           </button>
         </div>
@@ -70,7 +71,7 @@
 
         <span class="myprofession">Frontend-разработчик и веб-верстальщик</span>
 
-        <button class="show__more__button" type="button">
+        <button class="show__more__button popupmaxbutton" type="button">
           Узнать больше
         </button>
       </div>
@@ -98,7 +99,7 @@
           </li>
         </ul>
 
-        <button class="first_section__button" type="button">
+        <button class="first_section__button popupmaxbutton" type="button">
           Узнать стоимость
         </button>
       </div>
@@ -137,7 +138,7 @@
           </li>
         </ul>
 
-        <button class="second__section__button">Заказать проект</button>
+        <button class="second__section__button popupmaxbutton">Заказать проект</button>
       </div>
     </section>
   </main>
@@ -176,7 +177,7 @@
         <a href="mailto:dmitry@alekseev.com" class="envelope">dmitry@alekseev.com</a>
       </div>
       <div class="footer__right">
-        <button type="button" class="footer__call__button">
+        <button type="button" class="footer__call__button popupminbutton">
           Заказать звонок
         </button>
         <ul class="socials">
