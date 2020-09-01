@@ -21,6 +21,7 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
     border-radius: 7%;
+    align-items: center;
 }
 
 form label {
@@ -61,8 +62,10 @@ form input {
     background-size: contain;
 }
 
-.popup-window__error {
-    border: 2px solid red;
+.popup-window__message {
+    text-align: center;
+    font-size: 30px;
+    margin-top: 100px;
 }
 
 .popup-window-comment {
@@ -72,4 +75,9 @@ form input {
     padding-left: 10px;
     background: #fbfbfb;
     resize: none;
+}
+
+.error {
+    margin-top: 10px;
+    color: blue;
 }

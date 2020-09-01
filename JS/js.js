@@ -65,11 +65,11 @@ $(document).ready(function () {
       <div class="popup-window">
         <form class="formmin">
           <label>* Номер телефона
-            <input class="popup-window__phone" type="text" name="name" placeholder="+7(123)456-78-90">
+            <input class="popup-window__phone" type="text" name="phone" placeholder="+7(123)456-78-90">
           </label>
 
           <label>* Имя
-            <input class="popup-window__name" name="phone" placeholder="Джон" maxlength="30"></input>
+            <input class="popup-window__name" name="name" placeholder="Джон" maxlength="30"></input>
           </label>
 
           <button class="popup-window__send-button" type="submit" value="send">Заказать звонок</button>
@@ -144,7 +144,6 @@ $(document).ready(function () {
     popupwindow.show();
     popupform.show();
     popupclosebutton.css("display", "block");
-
     popupwindow.animateRotate(720, 500);
 
     if (labellength <= 2) {
@@ -161,7 +160,7 @@ $(document).ready(function () {
 
           padding: "35",
           opacity: 1,
-          height: "300",
+          height: "320",
           width: "320",
         }, 500, );
       }
@@ -170,7 +169,7 @@ $(document).ready(function () {
 
         padding: "45",
         opacity: 1,
-        height: "550",
+        height: "600",
         width: "500",
       }, 500, );
     } else {
@@ -178,7 +177,7 @@ $(document).ready(function () {
 
         padding: "35",
         opacity: 1,
-        height: "550",
+        height: "600",
         width: "320",
       }, 500, );
 
@@ -193,6 +192,9 @@ $(document).ready(function () {
     let popupform = $(this).parent().find('form');
 
     popupform.hide();
+    popupwindow.find('.popup-window__message').remove();
+    popupform.find('input').val(' ');
+    popupform.find('textarea').val(' ');
     popupwindow.animateRotate(720, 500);
     popupwindow.animate({
 
@@ -268,6 +270,9 @@ $(document).ready(function () {
       /*Отправка формы в случае успеха валидации*/
       submitHandler: function () {
         sendAjaxFormmax('formmax', 'ajax-form.php'); //Вызываем функцию отправки формы
+        popup = $('.formmax').parent().find('.popup-window__close-button');
+        let closepopupmax = closepopup.bind(popup); //Передаем функции closepopup параметры переменной popupmax в качестве this
+        setTimeout(closepopupmax, 1500);
         return false;
       }
     });
@@ -300,14 +305,14 @@ $(document).ready(function () {
       /*Отправка формы в случае успеха валидации*/
       submitHandler: function () {
         sendAjaxFormmax('formmin', 'ajax-form.php'); //Вызываем функцию отправки формы
+
+        popup = $('.formmin').parent().find('.popup-window__close-button');
+        let closepopupmin = closepopup.bind(popup); //Передаем функции closepopup параметры переменной popupmax в качестве this
+        setTimeout(closepopupmin, 1500);
         return false;
       }
     });
   });
-
-
-
-
 });
 
 function sendAjaxFormmax(formmax, url) {
@@ -320,12 +325,18 @@ function sendAjaxFormmax(formmax, url) {
     success: function (response) { //Данные отправлены успешно
 
       //Ваш код если успешно отправлено
-      alert('Успешно отправлено!');
+      $('.formmax').hide();
+      $('.formmax').parent().append(`
+        <p class="popup-window__message">Успешно отправлено</p>
+      `);
     },
     error: function (response) { // Данные не отправлены
 
       //Ваш код если ошибка
-      alert('Ошибка отправления');
+      $('.formmax').hide();
+      $('.formmax').parent().append(`
+        <p class="popup-window__message">Ошибка отправления</p>
+      `);
     }
   });
 };
@@ -340,12 +351,18 @@ function sendAjaxFormmin(formmin, url) {
     success: function (response) { //Данные отправлены успешно
 
       //Ваш код если успешно отправлено
-      alert('Успешно отправлено!');
+      $('.formmin').hide();
+      $('.formmin').parent().append(`
+        <p class="popup-window__message">Успешно отправлено</p>
+      `);
     },
     error: function (response) { // Данные не отправлены
 
       //Ваш код если ошибка
-      alert('Ошибка отправления');
+      $('.formmin').hide();
+      $('.formmin').parent().append(`
+        <p class="popup-window__message">Ошибка отправления</p>
+      `);
     }
   });
 };
