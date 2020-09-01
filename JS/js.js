@@ -243,10 +243,10 @@ $(document).ready(function () {
         name: {
           required: true,
         },
-        email: {
-          required: true,
-          email: true
-        },
+        // email: {
+        //   required: true,
+        //   email: true
+        // },
         phone: {
           required: true,
         },
