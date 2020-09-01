@@ -267,20 +267,76 @@ $(document).ready(function () {
 
       /*Отправка формы в случае успеха валидации*/
       submitHandler: function () {
-        sendAjaxForm('formmax', 'ajax-form.php'); //Вызываем функцию отправки формы
+        sendAjaxFormmax('formmax', 'ajax-form.php'); //Вызываем функцию отправки формы
         return false;
       }
     });
   });
+
+  $('.formmin').children('button').click(function () {
+
+    /*Валидация полей формы*/
+    $('.formmin').validate({
+      //Правила валидации
+      rules: {
+        name: {
+          required: true,
+        },
+        phone: {
+          required: true,
+        },
+
+      },
+      //Сообщения об ошибках
+      messages: {
+        name: {
+          required: "Обязательно укажите имя",
+        },
+        phone: {
+          required: "Укажите номер телефона",
+        },
+      },
+
+      /*Отправка формы в случае успеха валидации*/
+      submitHandler: function () {
+        sendAjaxFormmax('formmin', 'ajax-form.php'); //Вызываем функцию отправки формы
+        return false;
+      }
+    });
+  });
+
+
+
+
 });
 
-function sendAjaxForm(formmax, url) {
+function sendAjaxFormmax(formmax, url) {
 
   $.ajax({
     url: url, //url страницы (ajax-form.php)
     type: "POST", //метод отправки
     dataType: "html", //формат данных
     data: $(("." + formmax)).serialize(), // Сеарилизуем объекты формы
+    success: function (response) { //Данные отправлены успешно
+
+      //Ваш код если успешно отправлено
+      alert('Успешно отправлено!');
+    },
+    error: function (response) { // Данные не отправлены
+
+      //Ваш код если ошибка
+      alert('Ошибка отправления');
+    }
+  });
+};
+
+function sendAjaxFormmin(formmin, url) {
+
+  $.ajax({
+    url: url, //url страницы (ajax-form.php)
+    type: "POST", //метод отправки
+    dataType: "html", //формат данных
+    data: $(("." + formmin)).serialize(), // Сеарилизуем объекты формы
     success: function (response) { //Данные отправлены успешно
 
       //Ваш код если успешно отправлено
