@@ -20,7 +20,8 @@ $(document).ready(function () {
 
     let offset = $(href).offset().top;
 
-    $("body,html").animate({
+    $("body,html").animate(
+      {
         scrollTop: offset,
       },
       700
@@ -107,8 +108,8 @@ $(document).ready(function () {
       </div>
     </div>`);
 
-  $('body').append(popupmin);
-  $('body').append(popupmax);
+  $("body").append(popupmin);
+  $("body").append(popupmax);
 
   // Функция rotate
 
@@ -118,31 +119,34 @@ $(document).ready(function () {
     return this.each(function (i, e) {
       args.complete = $.proxy(args.complete, e);
       args.step = function (now) {
-        $.style(e, 'transform', 'rotate(' + now + 'deg)');
+        $.style(e, "transform", "rotate(" + now + "deg)");
         if (step) return step.apply(e, arguments);
       };
 
       $({
-        deg: 0
-      }).animate({
-        deg: angle
-      }, args);
+        deg: 0,
+      }).animate(
+        {
+          deg: angle,
+        },
+        args
+      );
     });
   };
 
   // Анимация открытия окна
 
   function openpopup() {
-    let popupwindow = $(this).find('.popup-window');
-    let popupform = $(this).find('form');
-    let popupclosebutton = $(this).find('popup-window__close-button');
+    let popupwindow = $(this).find(".popup-window");
+    let popupform = $(this).find("form");
+    let popupclosebutton = $(this).find("popup-window__close-button");
     let screenwidth = $(window).width();
-    let labellength = $(this).find('label').length;
+    let labellength = $(this).find("label").length;
 
     disableScroll();
 
     $(this).css("display", "block");
-    popupwindow.find('.popup-window__message').remove();
+    popupwindow.find(".popup-window__message").remove();
     popupwindow.show();
     popupform.show();
     popupclosebutton.css("display", "block");
@@ -150,77 +154,87 @@ $(document).ready(function () {
     console.log(labellength);
     if (labellength <= 3) {
       if (screenwidth > 750) {
-        popupwindow.animate({
-
-          padding: "45",
-          opacity: 1,
-          height: "320",
-          width: "500",
-        }, 500, );
+        popupwindow.animate(
+          {
+            padding: "45",
+            opacity: 1,
+            height: "320",
+            width: "500",
+          },
+          500
+        );
       } else {
-        popupwindow.animate({
-
-          padding: "35",
-          opacity: 1,
-          height: "320",
-          width: "320",
-        }, 500, );
+        popupwindow.animate(
+          {
+            padding: "35",
+            opacity: 1,
+            height: "320",
+            width: "320",
+          },
+          500
+        );
       }
     } else if (screenwidth > 750) {
-      popupwindow.animate({
-
-        padding: "45",
-        opacity: 1,
-        height: "600",
-        width: "500",
-      }, 500, );
+      popupwindow.animate(
+        {
+          padding: "45",
+          opacity: 1,
+          height: "600",
+          width: "500",
+        },
+        500
+      );
     } else {
-      popupwindow.animate({
-
-        padding: "35",
-        opacity: 1,
-        height: "600",
-        width: "320",
-      }, 500, );
+      popupwindow.animate(
+        {
+          padding: "35",
+          opacity: 1,
+          height: "600",
+          width: "320",
+        },
+        500
+      );
     }
   }
 
   // Анимация закрытия окна
 
-
   function closepopup() {
     let popupwindow = $(this).parent();
-    let popupform = $(this).parent().find('form');
+    let popupform = $(this).parent().find("form");
 
     popupform.hide();
-    popupform.find('input').val('');
-    popupform.find('textarea').val('');
+    popupform.find("input").val("");
+    popupform.find("textarea").val("");
     popupwindow.animateRotate(720, 500);
-    popupwindow.animate({
-
-      padding: "0",
-      opacity: 0.25,
-      height: "0",
-      width: "0",
-    }, 500, function () {
-      popupwindow.parent().hide();
-      enableScroll();
-    });
+    popupwindow.animate(
+      {
+        padding: "0",
+        opacity: 0.25,
+        height: "0",
+        width: "0",
+      },
+      500,
+      function () {
+        popupwindow.parent().hide();
+        enableScroll();
+      }
+    );
   }
 
   // Вызов функций на нажатие кнопки
 
-  $('.popupminbutton').click(function () {
+  $(".popupminbutton").click(function () {
     let openpopupmin = openpopup.bind(popupmin); //Передаем функции openpopup параметры переменной popupmin в качестве this
     openpopupmin();
   });
 
-  $('.popupmaxbutton').click(function () {
+  $(".popupmaxbutton").click(function () {
     let openpopupmax = openpopup.bind(popupmax); //Передаем функции openpopup параметры переменной popupmax в качестве this
     openpopupmax();
   });
 
-  $('.popup-window__close-button').click(function () {
+  $(".popup-window__close-button").click(function () {
     closepopup.call(this);
   });
 
@@ -236,132 +250,138 @@ $(document).ready(function () {
     }
   });
 
-  $('.formmax').children('button').click(function () {
+  $(".formmax")
+    .children("button")
+    .click(function () {
+      /*Валидация полей формы*/
+      $(".formmax").validate({
+        //Правила валидации
+        rules: {
+          name: {
+            required: true,
+          },
+          email: {
+            required: true,
+            email: true,
+          },
+          phone: {
+            required: true,
+          },
+        },
+        //Сообщения об ошибках
+        messages: {
+          name: {
+            required: "Обязательно укажите имя",
+          },
+          email: {
+            required: "Обязательно укажите Email",
+          },
+          phone: {
+            required: "Укажите номер телефона",
+          },
+        },
 
-    /*Валидация полей формы*/
-    $('.formmax').validate({
-      //Правила валидации
-      rules: {
-        name: {
-          required: true,
+        /*Отправка формы в случае успеха валидации*/
+        submitHandler: function () {
+          sendAjaxFormmax("formmax", "ajax-form.php"); //Вызываем функцию отправки формы
+          let popup = $(".formmax")
+            .parent()
+            .find(".popup-window__close-button");
+          let closepopupmax = closepopup.bind(popup); //Передаем функции closepopup параметры переменной popupmax в качестве this
+          setTimeout(closepopupmax, 1500);
+          return false;
         },
-        email: {
-          required: true,
-          email: true
-        },
-        phone: {
-          required: true,
-        },
-
-      },
-      //Сообщения об ошибках
-      messages: {
-        name: {
-          required: "Обязательно укажите имя",
-        },
-        email: {
-          required: "Обязательно укажите Email",
-        },
-        phone: {
-          required: "Укажите номер телефона",
-        },
-      },
-
-      /*Отправка формы в случае успеха валидации*/
-      submitHandler: function () {
-        sendAjaxFormmax('formmax', 'ajax-form.php'); //Вызываем функцию отправки формы
-        let popup = $('.formmax').parent().find('.popup-window__close-button');
-        let closepopupmax = closepopup.bind(popup); //Передаем функции closepopup параметры переменной popupmax в качестве this
-        setTimeout(closepopupmax, 1500);
-        return false;
-      }
+      });
     });
-  });
 
-  $('.formmin').children('button').click(function () {
+  $(".formmin")
+    .children("button")
+    .click(function () {
+      /*Валидация полей формы*/
+      $(".formmin").validate({
+        //Правила валидации
+        rules: {
+          name: {
+            required: true,
+          },
+          phone: {
+            required: true,
+          },
+        },
+        //Сообщения об ошибках
+        messages: {
+          name: {
+            required: "Обязательно укажите имя",
+          },
+          phone: {
+            required: "Укажите номер телефона",
+          },
+        },
 
-    /*Валидация полей формы*/
-    $('.formmin').validate({
-      //Правила валидации
-      rules: {
-        name: {
-          required: true,
+        /*Отправка формы в случае успеха валидации*/
+        submitHandler: function () {
+          sendAjaxFormmin("formmin", "ajax-form.php"); //Вызываем функцию отправки формы
+          let popup = $(".formmin")
+            .parent()
+            .find(".popup-window__close-button");
+          let closepopupmin = closepopup.bind(popup); //Передаем функции closepopup параметры переменной popupmax в качестве this
+          setTimeout(closepopupmin, 1500);
+          return false;
         },
-        phone: {
-          required: true,
-        },
-
-      },
-      //Сообщения об ошибках
-      messages: {
-        name: {
-          required: "Обязательно укажите имя",
-        },
-        phone: {
-          required: "Укажите номер телефона",
-        },
-      },
-
-      /*Отправка формы в случае успеха валидации*/
-      submitHandler: function () {
-        sendAjaxFormmax('formmin', 'ajax-form.php'); //Вызываем функцию отправки формы
-        let popup = $('.formmin').parent().find('.popup-window__close-button');
-        let closepopupmin = closepopup.bind(popup); //Передаем функции closepopup параметры переменной popupmax в качестве this
-        setTimeout(closepopupmin, 1500);
-        return false;
-      }
+      });
     });
-  });
 });
 
 function sendAjaxFormmax(formmax, url) {
-
   $.ajax({
     url: url, //url страницы (ajax-form.php)
     type: "POST", //метод отправки
     dataType: "html", //формат данных
-    data: $(("." + formmax)).serialize(), // Сеарилизуем объекты формы
-    success: function (response) { //Данные отправлены успешно
+    data: $("." + formmax).serialize(), // Сеарилизуем объекты формы
+    success: function (response) {
+      //Данные отправлены успешно
 
       //Ваш код если успешно отправлено
-      $('.formmax').hide();
-      $('.formmax').parent().append(`
+      $(".formmax").hide();
+      $(".formmax").parent().append(`
         <p class="popup-window__message">Успешно отправлено</p>
       `);
     },
-    error: function (response) { // Данные не отправлены
-
+    error: function (response) {
+      // Данные не отправлены
       //Ваш код если ошибка
-      $('.formmax').hide();
-      $('.formmax').parent().append(`
+      alert("это писецмакс");
+      $(".formmax").hide();
+      $(".formmax").parent().append(`
         <p class="popup-window__message">Ошибка отправления</p>
       `);
-    }
+    },
   });
-};
+}
 
-function sendAjaxFormmax(formmin, url) {
-
+function sendAjaxFormmin(formmin, url) {
   $.ajax({
     url: url, //url страницы (ajax-form.php)
     type: "POST", //метод отправки
     dataType: "html", //формат данных
-    data: $(("." + formmin)).serialize(), // Сеарилизуем объекты формы
-    success: function (response) { //Данные отправлены успешно
+    data: $("." + formmin).serialize(), // Сеарилизуем объекты формы
+    success: function (response) {
+      //Данные отправлены успешно
 
       //Ваш код если успешно отправлено
-      $('.formmin').hide();
-      $('.formmin').parent().append(`
+      $(".formmin").hide();
+      $(".formmin").parent().append(`
         <p class="popup-window__message">Успешно отправлено</p>
       `);
     },
-    error: function (response) { // Данные не отправлены
-
+    error: function (response) {
+      // Данные не отправлены
       //Ваш код если ошибка
-      $('.formmin').hide();
-      $('.formmin').parent().append(`
+
+      $(".formmin").hide();
+      $(".formmin").parent().append(`
         <p class="popup-window__message">Ошибка отправления</p>
       `);
-    }
+    },
   });
-};
+}
