@@ -20,8 +20,7 @@ $(document).ready(function () {
 
     let offset = $(href).offset().top;
 
-    $("body,html").animate(
-      {
+    $("body,html").animate({
         scrollTop: offset,
       },
       700
@@ -64,12 +63,13 @@ $(document).ready(function () {
   const popupmin = $(` 
     <div class="popup-background">
       <div class="popup-window">
+      <h1 class="popup-window__head">Форма обратной связи</h1>
         <form class="formmin">
-          <label>* Номер телефона
+          <label class="popup-window__label">* Номер телефона
             <input class="popup-window__phone" type="text" name="phone" placeholder="+7(123)456-78-90">
           </label>
 
-          <label>* Имя
+          <label class="popup-window__label">* Имя
             <input class="popup-window__name" name="name" placeholder="Джон" maxlength="30"></input>
           </label>
 
@@ -84,20 +84,22 @@ $(document).ready(function () {
   const popupmax = $(` 
     <div class="popup-background">
       <div class="popup-window popupmax">
+      <h1 class="popup-window__head">Форма обратной связи</h1>
+
         <form class="formmax">
           <label>* Номер телефона
             <input class="popup-window__phone" type="text" name="phone" placeholder="+7(123)456-78-90">
           </label>
 
-          <label>* Имя
+          <label class="popup-window__label">* Имя
             <input class="popup-window__name" name="name" placeholder="Джон" maxlength="30"></input>
           </label>
 
-          <label>* E-mail адрес
+          <label class="popup-window__label">* E-mail адрес
             <input class="popup-window-e-mail" name="email" placeholder="example@example.ru" maxlength="40"></input>
           </label>
 
-          <label> Дополнительная информация 
+          <label class="popup-window__label"> Дополнительная информация 
             <textarea class="popup-window-comment" name="comment" placeholder="Что нам стоит дом построить?"
           maxlength="400"></textarea>
           </label>
@@ -125,8 +127,7 @@ $(document).ready(function () {
 
       $({
         deg: 0,
-      }).animate(
-        {
+      }).animate({
           deg: angle,
         },
         args
@@ -141,21 +142,18 @@ $(document).ready(function () {
     let popupform = $(this).find("form");
     let popupclosebutton = $(this).find("popup-window__close-button");
     let screenwidth = $(window).width();
-    let labellength = $(this).find("label").length;
+    let labellength = $(this).find(".popup-window__label").length;
 
     disableScroll();
-
     $(this).css("display", "block");
     popupwindow.find(".popup-window__message").remove();
     popupwindow.show();
     popupform.show();
     popupclosebutton.css("display", "block");
     popupwindow.animateRotate(720, 500);
-    console.log(labellength);
-    if (labellength <= 3) {
+    if (labellength == 2) {
       if (screenwidth > 750) {
-        popupwindow.animate(
-          {
+        popupwindow.animate({
             padding: "45",
             opacity: 1,
             height: "320",
@@ -164,9 +162,8 @@ $(document).ready(function () {
           500
         );
       } else {
-        popupwindow.animate(
-          {
-            padding: "35",
+        popupwindow.animate({
+            padding: "10 35 35 35",
             opacity: 1,
             height: "320",
             width: "320",
@@ -175,9 +172,8 @@ $(document).ready(function () {
         );
       }
     } else if (screenwidth > 750) {
-      popupwindow.animate(
-        {
-          padding: "45",
+      popupwindow.animate({
+          padding: "10 45 45 45",
           opacity: 1,
           height: "600",
           width: "500",
@@ -185,9 +181,8 @@ $(document).ready(function () {
         500
       );
     } else {
-      popupwindow.animate(
-        {
-          padding: "35",
+      popupwindow.animate({
+          padding: "10 35 35 35",
           opacity: 1,
           height: "600",
           width: "320",
@@ -207,8 +202,7 @@ $(document).ready(function () {
     popupform.find("input").val("");
     popupform.find("textarea").val("");
     popupwindow.animateRotate(720, 500);
-    popupwindow.animate(
-      {
+    popupwindow.animate({
         padding: "0",
         opacity: 0.25,
         height: "0",
@@ -266,6 +260,7 @@ $(document).ready(function () {
           },
           phone: {
             required: true,
+            minlength: 10,
           },
         },
         //Сообщения об ошибках
@@ -315,6 +310,8 @@ $(document).ready(function () {
           },
           phone: {
             required: "Укажите номер телефона",
+            minlength: 10,
+
           },
         },
 
@@ -326,6 +323,7 @@ $(document).ready(function () {
             .find(".popup-window__close-button");
           let closepopupmin = closepopup.bind(popup); //Передаем функции closepopup параметры переменной popupmax в качестве this
           setTimeout(closepopupmin, 1500);
+
           return false;
         },
       });
@@ -344,17 +342,21 @@ function sendAjaxFormmax(formmax, url) {
       //Ваш код если успешно отправлено
       $(".formmax").hide();
       $(".formmax").parent().append(`
-        <p class="popup-window__message">Успешно отправлено</p>
+        <p class="popup-window__message">Спасибо за заявку! Мы скоро свяжемся с Вами</p>
       `);
     },
     error: function (response) {
       // Данные не отправлены
       //Ваш код если ошибка
-      alert("это писецмакс");
       $(".formmax").hide();
       $(".formmax").parent().append(`
         <p class="popup-window__message">Ошибка отправления</p>
       `);
+      $(".popupmax").animate({
+          height: "320",
+        },
+        300
+      );
     },
   });
 }
@@ -371,7 +373,7 @@ function sendAjaxFormmin(formmin, url) {
       //Ваш код если успешно отправлено
       $(".formmin").hide();
       $(".formmin").parent().append(`
-        <p class="popup-window__message">Успешно отправлено</p>
+        <p class="popup-window__message">Спасибо за заявку! Мы скоро свяжемся с Вами.</p>
       `);
     },
     error: function (response) {
