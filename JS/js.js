@@ -283,7 +283,7 @@ $(document).ready(function () {
             .parent()
             .find(".popup-window__close-button");
           let closepopupmax = closepopup.bind(popup); //Передаем функции closepopup параметры переменной popupmax в качестве this
-          setTimeout(closepopupmax, 1500);
+          setTimeout(closepopupmax, 2000);
           return false;
         },
       });
@@ -322,7 +322,7 @@ $(document).ready(function () {
             .parent()
             .find(".popup-window__close-button");
           let closepopupmin = closepopup.bind(popup); //Передаем функции closepopup параметры переменной popupmax в качестве this
-          setTimeout(closepopupmin, 1500);
+          setTimeout(closepopupmin, 2000);
 
           return false;
         },
