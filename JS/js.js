@@ -20,7 +20,8 @@ $(document).ready(function () {
 
     let offset = $(href).offset().top;
 
-    $("body,html").animate({
+    $("body,html").animate(
+      {
         scrollTop: offset,
       },
       700
@@ -127,7 +128,8 @@ $(document).ready(function () {
 
       $({
         deg: 0,
-      }).animate({
+      }).animate(
+        {
           deg: angle,
         },
         args
@@ -153,8 +155,9 @@ $(document).ready(function () {
     popupwindow.animateRotate(720, 500);
     if (labellength == 2) {
       if (screenwidth > 750) {
-        popupwindow.animate({
-            padding: "45",
+        popupwindow.animate(
+          {
+            padding: "10 45 45 45",
             opacity: 1,
             height: "320",
             width: "500",
@@ -162,7 +165,8 @@ $(document).ready(function () {
           500
         );
       } else {
-        popupwindow.animate({
+        popupwindow.animate(
+          {
             padding: "10 35 35 35",
             opacity: 1,
             height: "320",
@@ -172,7 +176,8 @@ $(document).ready(function () {
         );
       }
     } else if (screenwidth > 750) {
-      popupwindow.animate({
+      popupwindow.animate(
+        {
           padding: "10 45 45 45",
           opacity: 1,
           height: "600",
@@ -181,7 +186,8 @@ $(document).ready(function () {
         500
       );
     } else {
-      popupwindow.animate({
+      popupwindow.animate(
+        {
           padding: "10 35 35 35",
           opacity: 1,
           height: "600",
@@ -202,7 +208,8 @@ $(document).ready(function () {
     popupform.find("input").val("");
     popupform.find("textarea").val("");
     popupwindow.animateRotate(720, 500);
-    popupwindow.animate({
+    popupwindow.animate(
+      {
         padding: "0",
         opacity: 0.25,
         height: "0",
@@ -311,7 +318,6 @@ $(document).ready(function () {
           phone: {
             required: "Укажите номер телефона",
             minlength: 10,
-
           },
         },
 
@@ -352,7 +358,8 @@ function sendAjaxFormmax(formmax, url) {
       $(".formmax").parent().append(`
         <p class="popup-window__message">Ошибка отправления</p>
       `);
-      $(".popupmax").animate({
+      $(".popupmax").animate(
+        {
           height: "320",
         },
         300
