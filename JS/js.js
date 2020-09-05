@@ -344,6 +344,11 @@ function sendAjaxFormmax(formmax, url) {
       $(".formmax").parent().append(`
         <p class="popup-window__message">Спасибо за заявку! Мы скоро свяжемся с Вами</p>
       `);
+      $(".popupmax").animate({
+          height: "320",
+        },
+        300
+      );
     },
     error: function (response) {
       // Данные не отправлены
