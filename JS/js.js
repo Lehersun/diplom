@@ -311,7 +311,7 @@ $(document).ready(function () {
           },
           phone: {
             required: "Укажите номер телефона",
-            minlength: 10,
+            minlength: "Номер телефона должен быть не менее 10 символов",
           },
         },
 
