@@ -60,58 +60,12 @@ $(document).ready(function () {
 
   // Всплывающее окно "Заказать звонок"
 
-  const popupmin = $(` 
-    <div class="popup-background">
-      <div class="popup-window">
-      <h1 class="popup-window__head">Форма обратной связи</h1>
-        <form class="formmin">
-          <label class="popup-window__label">* Номер телефона
-            <input class="popup-window__phone" type="text" name="phone" placeholder="+7(123)456-78-90">
-          </label>
-
-          <label class="popup-window__label">* Имя
-            <input class="popup-window__name" name="name" placeholder="Джон" maxlength="30"></input>
-          </label>
-
-          <button class="popup-window__send-button" type="submit" value="send">Заказать звонок</button>
-        </form>
-        
-        <button class="popup-window__close-button" type="button" name="popup-window__close-button"></button>
-      </div>
-    </div>`);
+  const popupmin = $('.formmin').parents(".popup-background");
 
   // Всплывающее окно "Обратной связи"
-  const popupmax = $(` 
-    <div class="popup-background">
-      <div class="popup-window popupmax">
-      <h1 class="popup-window__head">Форма обратной связи</h1>
+  const popupmax = $('.formmax').parents(".popup-background");
 
-        <form class="formmax">
-          <label>* Номер телефона
-            <input class="popup-window__phone" type="text" name="phone" placeholder="+7(123)456-78-90">
-          </label>
 
-          <label class="popup-window__label">* Имя
-            <input class="popup-window__name" name="name" placeholder="Джон" maxlength="30"></input>
-          </label>
-
-          <label class="popup-window__label">* E-mail адрес
-            <input class="popup-window-e-mail" name="email" placeholder="example@example.ru" maxlength="40"></input>
-          </label>
-
-          <label class="popup-window__label"> Дополнительная информация 
-            <textarea class="popup-window-comment" name="comment" placeholder="Что нам стоит дом построить?"
-          maxlength="400"></textarea>
-          </label>
-            <button class="popup-window__send-button" type="submit" value="send">Заказать звонок</button>
-        </form>
-        
-        <button class="popup-window__close-button" type="button" name="popup-window__close-button"></button>
-      </div>
-    </div>`);
-
-  $("body").append(popupmin);
-  $("body").append(popupmax);
 
   // Функция rotate
 

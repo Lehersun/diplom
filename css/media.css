@@ -7,6 +7,14 @@
   }
 }
 
+@media (max-height: 900px) {
+  .popupmax {
+    margin: 3vh auto 0;
+  }
+}
+
+
+
 /* HEADER */
 @media (max-width: 1200px) {
   .fixed-container {
