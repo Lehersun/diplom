@@ -6,8 +6,8 @@ $(document).ready(function () {
 
 
   //Меню
-  $(".menu__button").click(function () {
-    $(".menu__button").toggleClass("menu__button__opened");
+  $(".header__top__menu-button").click(function () {
+    $(".header__top__menu-button").toggleClass("header__top__menu-button__opened");
     $(".header__top nav").slideToggle(".header__top nav");
   });
 
@@ -27,7 +27,7 @@ $(document).ready(function () {
     let screenwidth = $(window).width();
 
     if (screenwidth <= 1200) {
-      $(".menu__button").toggleClass("menu__button__opened");
+      $(".header__top__menu-button").toggleClass("header__top__menu-button__opened");
       $(".header__top nav").slideToggle(".header__top nav");
     }
   });

@@ -15,20 +15,20 @@ main h1 {
 }
 
 
-.first__section {
+.first-section {
     min-height: 650px;
     width: 100%;
     background-color: white;
 }
 
-.my__skills__list {
+.first-section__skills-list {
     display: flex;
     justify-content: space-between;
     font-size: 20.5px;
     line-height: 30px;
 }
 
-.my__skills__list li {
+.first-section__skills-list li {
     color: #8993ad;
     text-align: center;
     padding-top: 90px;
@@ -36,27 +36,27 @@ main h1 {
     background-position: top center;
 }
 
-.my__skills__list a:hover {
+.first-section__skills-list a:hover {
     color: #fc557c;
 }
 
-.my__skills__list li:nth-child(1) {
+.first-section__skills-list li:nth-child(1) {
     background-image: url(../img/tools-and-utensils.png);
 }
 
-.my__skills__list li:nth-child(2) {
+.first-section__skills-list li:nth-child(2) {
     background-image: url(../img/responsive.png);
 }
 
-.my__skills__list li:nth-child(3) {
+.first-section__skills-list li:nth-child(3) {
     background-image: url(../img/programming.png);
 }
 
-.my__skills__list li:nth-child(4) {
+.first-section__skills-list li:nth-child(4) {
     background-image: url(../img/coding.png);
 }
 
-.first__section button {
+.first-section button {
     display: block;
     font-size: 19px;
     color: white;
@@ -66,14 +66,14 @@ main h1 {
     margin: 92px auto 0;
 }
 
-.second__section {
+.second-section {
     height: 855px;
     background-color: #fbfbfb;
     font-weight: 500;
     font-size: 20.5px;
 }
 
-.first__section button:hover {
+.first-section button:hover {
     color: whitesmoke;
     background-color: red;
 }

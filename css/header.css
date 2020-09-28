@@ -91,7 +91,7 @@ header {
     padding-top: 30px;
 }
 
-.menu__button {
+.header__top__menu-button {
     display: none;
     width: 45px;
     height: 45px;
@@ -99,7 +99,7 @@ header {
     background-size: 100%;
 }
 
-.menu__button__opened {
+.header__top__menu-button__opened {
     background: url(../img/closed-menu.png) no-repeat center;
 }
 
@@ -118,17 +118,17 @@ header {
     border-bottom: 1px solid #fc557c;
 }
 
-.phone__number {
+.header__top__right__phone-number {
     font-size: 25px;
     font-weight: bold;
     margin-right: 30px;
 }
 
-.phone__number:hover {
+.header__top__right__phone-number:hover {
     color: red;
 }
 
-.call__button {
+.call-button {
     font-size: 16px;
     height: 45px;
     width: 205px;
@@ -137,18 +137,18 @@ header {
     border: 1px solid #f53f4f;
 }
 
-.call__button:hover {
+.call-button:hover {
     color: whitesmoke;
     background-color: red;
 }
 
-.visual__container {
+.visual-container {
     position: relative;
     width: 100%;
     height: 692px;
 }
 
-.eclipse {
+.visual-container__eclipse {
     position: absolute;
     bottom: 0;
     right: -230px;
@@ -160,18 +160,18 @@ header {
     transform: rotate(-38deg) skewY(5deg);
 }
 
-.man_shade {
+.visual-container__man-shade {
     position: absolute;
     bottom: -55px;
     right: -110px;
-    background: url(../img/man_shade.webp) no-repeat;
+    background: url(../img/visual-container__man-shade.webp) no-repeat;
     background-size: 105%;
     height: 700px;
     width: 500px;
     z-index: 3;
 }
 
-.man {
+.visual-container__man-shade__man {
     position: absolute;
     top: 18px;
     left: 45px;
@@ -181,7 +181,7 @@ header {
     z-index: 2;
 }
 
-.header__text {
+.header-text {
     position: absolute;
     top: 300px;
     font-size: 80.5px;
@@ -189,18 +189,18 @@ header {
     z-index: 4;
 }
 
-.header__text span {
+.header-text span {
     display: block;
 }
 
-.myprofession {
+.header-text__myprofession {
     font-size: 25.5px;
     font-weight: 400;
     margin-top: 37px;
     color: gray;
 }
 
-.show__more__button {
+.header-text__myprofession__button {
     font-size: 18px;
     color: white;
     background-color: #ff4e2e;
@@ -209,7 +209,7 @@ header {
     margin-top: 50px;
 }
 
-.show__more__button:hover {
+.header-text__myprofession__button:hover {
     color: whitesmoke;
     background-color: red;
 }

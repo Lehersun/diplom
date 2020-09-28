@@ -23,7 +23,7 @@
     padding-right: 40px;
   }
 
-  .menu__button {
+  .header__top__menu-button {
     display: block;
   }
 
@@ -50,13 +50,13 @@
 
   /* ***************** */
 
-  .header__text {
+  .header-text {
     padding-top: 20px;
     padding-left: 0;
     font-size: 54px;
   }
 
-  .eclipse {
+  .visual-container__eclipse {
     position: absolute;
     bottom: 80px;
     right: -175px;
@@ -68,12 +68,12 @@
     transform: rotate(-32deg) skewY(5deg);
   }
 
-  .man_shade {
+  .visual-container__man-shade {
     bottom: -55px;
     right: -20px;
   }
 
-  .show__more__button {
+  .header-text__myprofession__button {
     width: 320px;
   }
 
@@ -124,11 +124,11 @@
     padding-right: 20px;
   }
 
-  .visual__container {
+  .visual-container {
     height: 400px;
   }
 
-  .eclipse {
+  .visual-container__eclipse {
     top: 400px;
     bottom: 0;
     right: unset;
@@ -139,7 +139,7 @@
     transform: rotate(-50deg) skewY(5deg);
   }
 
-  .man_shade {
+  .visual-container__man-shade {
     bottom: -70px;
     right: inset;
     left: 35%;
@@ -148,7 +148,7 @@
     width: 250px;
   }
 
-  .man {
+  .visual-container__man-shade__man {
     top: unset;
     bottom: 30px;
     left: 25px;
@@ -157,7 +157,7 @@
     width: 220px;
   }
 
-  .header__text {
+  .header-text {
     position: relative;
     top: unset;
     font-size: 30px;
@@ -167,7 +167,7 @@
     text-align: center;
   }
 
-  .myprofession {
+  .header-text__myprofession {
     margin: 16px auto;
     width: 250px;
     font-size: 16.5px;
@@ -175,7 +175,7 @@
     line-height: 20px;
   }
 
-  .show__more__button {
+  .header-text__myprofession__button {
     font-size: 18px;
     color: white;
     background-color: #ff4e2e;
@@ -231,40 +231,40 @@
     width: 220px;
   }
 
-  .call__button {
+  .call-button {
     height: 26px;
     width: 26px;
     background: url(../img/call-answer-top.png) no-repeat center;
     border: none;
   }
 
-  .call__button:hover {
+  .call-button:hover {
     filter: saturate(10);
     background-color: unset;
   }
 
-  .call__button span {
+  .call-button span {
     display: none;
   }
 
-  .phone__number {
+  .header__top__right__phone-number {
     font-size: 18.5px;
     font-weight: bold;
     margin-right: 0;
     height: 100%;
   }
 
-  .menu__button {
+  .header__top__menu-button {
     width: 26px;
     height: 26px;
     background-size: contain;
   }
 
-  .visual__container {
+  .visual-container {
     height: 418px;
   }
 
-  .show__more__button {
+  .header-text__myprofession__button {
     font-size: 16.5px;
     color: white;
     background-color: #ff4e2e;
@@ -275,12 +275,12 @@
 }
 
 @media (max-width: 400px) {
-  .eclipse {
+  .visual-container__eclipse {
     right: -10%;
     left: unset;
   }
 
-  .man_shade {
+  .visual-container__man-shade {
     left: 15%;
   }
 }
@@ -298,24 +298,24 @@
 }
 
 @media (max-width: 1200px) {
-  .my__skills__list {
+  .first-section__skills-list {
     flex-wrap: wrap;
     margin: 0 auto;
     max-width: 680px;
   }
 
-  .my__skills__list li {
+  .first-section__skills-list li {
     width: 300px;
     margin-bottom: 75px;
   }
 
-  .first__section button {
+  .first-section button {
     width: 320px;
     height: 70px;
     margin: 20px auto 0;
   }
 
-  .second__section {
+  .second-section {
     height: 1052px;
     font-size: 25.5px;
   }
@@ -353,17 +353,17 @@
     line-height: 30px;
   }
 
-  .first__section {
+  .first-section {
     height: 910px;
   }
 
-  .my__skills__list {
+  .first-section__skills-list {
     justify-content: center;
     font-size: 17px;
     width: 280px;
   }
 
-  .my__skills__list li {
+  .first-section__skills-list li {
     margin-bottom: 50px;
     padding-top: 70px;
     display: block;
@@ -371,14 +371,14 @@
     background-size: 60px;
   }
 
-  .first__section button {
+  .first-section button {
     width: 280px;
     height: 60px;
     margin: 0 auto;
     font-size: 17px;
   }
 
-  .second__section {
+  .second-section {
     height: 660px;
     font-size: 18px;
   }
@@ -479,7 +479,7 @@
     height: 437px;
   }
 
-  .aside__flying__symbols {
+  .aside__symbols {
     display: none;
   }
 }
@@ -556,7 +556,7 @@
     padding-left: 0;
   }
 
-  .footer__call__button {
+  .footer__call-button {
     width: 280px;
     height: 60px;
     font-size: 17px;
