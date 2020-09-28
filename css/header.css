@@ -58,26 +58,6 @@ header {
     transform: rotate(-25deg);
 }
 
-/* @keyframes slidein1 {
-    from {
-        top: -50px;
-        bottom: -50px;
-        right: -50px;
-        left: -50px;
-        transform: rotate(-180deg);
-    }
-}
-
-@keyframes slidein2 {
-    from {
-        top: -50px;
-        bottom: -50px;
-        right: -50px;
-        left: -50px;
-        transform: rotate(-180deg);
-    }
-} */
-
 .header {
     height: 100%;
     background-color: inherit;
