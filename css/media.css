@@ -77,24 +77,24 @@
     width: 320px;
   }
 
-  .symbol1 {
+  .symbol1.flying-symbol {
     top: 160px;
     left: 80px;
   }
 
-  .symbol2 {
+  .symbol2.flying-symbol {
     top: unset;
     bottom: 80px;
     left: 60px;
   }
 
-  .symbol3 {
+  .symbol3.flying-symbol {
     top: 150px;
     right: 65px;
     left: unset;
   }
 
-  .symbol4 {
+  .symbol4.flying-symbol {
     top: unset;
     left: unset;
     bottom: 160px;
@@ -102,7 +102,7 @@
     z-index: 10;
   }
 
-  .symbol5 {
+  .symbol5.flying-symbol {
     top: unset;
     bottom: 130px;
     left: 360px;

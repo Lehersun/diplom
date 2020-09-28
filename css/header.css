@@ -5,8 +5,10 @@ header {
     overflow: hidden;
 }
 
-.flying__symbol {
+.symbol {
     position: absolute;
+    top: 50%;
+    left: 50%;
     height: 50px;
     background: linear-gradient(30deg, #ff8f5a, #ff2f96);
     /* Градиент для текста */
@@ -17,48 +19,39 @@ header {
     /* Прозрачный текст */
     z-index: 1;
     font-weight: 900;
+    transform: rotate(360deg);
     transition: 1s;
 }
 
-/* .flying__symbol:nth-child(2n-1) {
-    animation-duration: 1s;
-    animation-name: slidein1;
-}
-
-.flying__symbol:nth-child(2n) {
-    animation-duration: 1s;
-    animation-name: slidein2;
-} */
-
-.symbol1 {
+.symbol1.flying-symbol {
     top: 139px;
     left: 135px;
     font-size: 50px;
     transform: rotate(30deg);
 }
 
-.symbol2 {
+.symbol2.flying-symbol {
     top: 372px;
     left: 255px;
     font-size: 55px;
     transform: rotate(15deg);
 }
 
-.symbol3 {
+.symbol3.flying-symbol {
     top: 170px;
     left: 800px;
     font-size: 30px;
     transform: rotate(-15deg);
 }
 
-.symbol4 {
+.symbol4.flying-symbol {
     top: 545px;
     left: 950px;
     font-size: 38px;
     transform: rotate(23deg);
 }
 
-.symbol5 {
+.symbol5.flying-symbol {
     top: 670px;
     left: 390px;
     font-size: 40px;

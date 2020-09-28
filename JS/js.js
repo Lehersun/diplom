@@ -1,11 +1,9 @@
 $(document).ready(function () {
   //Летающие символы
 
-  let i = 1;
-  while (i <= 5) {
-    $(".flying__symbol:nth-child(" + i + ")").addClass("symbol" + i);
-    i++;
-  }
+
+  $(".symbol").addClass("flying-symbol");
+
 
   //Меню
   $(".menu__button").click(function () {
