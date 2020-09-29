@@ -43,11 +43,19 @@ form input {
     width: 100%;
     padding-left: 10px;
     background: #fbfbfb;
+    font-family: Roboto, Roboto;
+
+}
+
+form textarea {
+    font-size: 12px;
+    font-family: Roboto, Roboto;
+
 }
 
 .popup-window__send-button {
     display: block;
-    margin: 25px auto 0;
+    margin: 15px auto 0;
     width: 200px;
     height: 45px;
     border: 1px solid white;

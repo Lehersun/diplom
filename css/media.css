@@ -1,19 +1,15 @@
 /* POPUP-WINDOW  */
-@media (max-width: 650px) {
-
-
-  .popupmax {
-    margin: 5vh auto 0;
-  }
-}
-
 @media (max-height: 900px) {
   .popupmax {
     margin: 3vh auto 0;
   }
 }
 
-
+@media (max-width: 650px) {
+  .popupmax {
+    margin: 5vh auto 0;
+  }
+}
 
 /* HEADER */
 @media (max-width: 1200px) {
@@ -186,31 +182,31 @@
 }
 
 @media (max-width: 650px) {
-  .symbol1 {
+  .symbol1.flying-symbol {
     top: 110px;
     left: 40px;
     font-size: 25px;
   }
 
-  .symbol2 {
+  .symbol2.flying-symbol {
     top: 213px;
     bottom: unset;
     left: 35px;
     font-size: 30px;
   }
 
-  .symbol3 {
+  .symbol3.flying-symbol {
     top: 152px;
     right: 38px;
     font-size: 18px;
     transform: rotate(15deg);
   }
 
-  .symbol4 {
+  .symbol4.flying-symbol {
     display: none;
   }
 
-  .symbol5 {
+  .symbol5.flying-symbol {
     top: 90px;
     bottom: unset;
     left: unset;
@@ -268,13 +264,14 @@
     font-size: 16.5px;
     color: white;
     background-color: #ff4e2e;
-    height: 60px;
+    height: 50px;
     width: 270px;
     margin-top: 10px;
   }
 }
 
 @media (max-width: 400px) {
+
   .visual-container__eclipse {
     right: -10%;
     left: unset;

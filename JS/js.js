@@ -127,7 +127,7 @@ $(document).ready(function () {
       popupwindow.animate({
           padding: "10 45 45 45",
           opacity: 1,
-          height: "600",
+          height: "580",
           width: "500",
         },
         500
@@ -136,7 +136,7 @@ $(document).ready(function () {
       popupwindow.animate({
           padding: "10 35 35 35",
           opacity: 1,
-          height: "600",
+          height: "580",
           width: "320",
         },
         500
