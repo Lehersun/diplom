@@ -28,7 +28,7 @@ main h1 {
     line-height: 30px;
 }
 
-.first-section__skills-list li {
+.first-section__skills-list-item {
     color: #8993ad;
     text-align: center;
     padding-top: 90px;
@@ -36,27 +36,27 @@ main h1 {
     background-position: top center;
 }
 
-.first-section__skills-list a:hover {
+.first-section__skills-list-item a:hover {
     color: #fc557c;
 }
 
-.first-section__skills-list li:nth-child(1) {
+.first-section__skills-list-item:nth-child(1) {
     background-image: url(../img/tools-and-utensils.png);
 }
 
-.first-section__skills-list li:nth-child(2) {
+.first-section__skills-list-item:nth-child(2) {
     background-image: url(../img/responsive.png);
 }
 
-.first-section__skills-list li:nth-child(3) {
+.first-section__skills-list-item:nth-child(3) {
     background-image: url(../img/programming.png);
 }
 
-.first-section__skills-list li:nth-child(4) {
+.first-section__skills-list-item:nth-child(4) {
     background-image: url(../img/coding.png);
 }
 
-.first-section button {
+.first-section__button {
     display: block;
     font-size: 19px;
     color: white;
@@ -73,7 +73,7 @@ main h1 {
     font-size: 20.5px;
 }
 
-.first-section button:hover {
+.first-section__button:hover {
     color: whitesmoke;
     background-color: red;
 }
@@ -87,19 +87,19 @@ main h1 {
 
 }
 
-.examples img {
+.examples__item__img {
     margin: 0 auto;
 
 }
 
-.examples li span {
+.examples__item__text {
     color: #8993ad;
     margin-top: 35px;
     display: block;
     text-align: center;
 }
 
-.examples li span:hover {
+.examples__item__text:hover {
     color: #fc557c;
 }
 

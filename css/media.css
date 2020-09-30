@@ -23,12 +23,12 @@
     display: block;
   }
 
-  .header__top nav {
+  .header__menu-container {
     display: none;
   }
 
   /* Всплывающее меню */
-  .header__top nav {
+  .header__menu-container {
     /* display: inline-block; */
     position: absolute;
     z-index: 1;
@@ -36,11 +36,11 @@
     font-size: 25px;
   }
 
-  .menu {
+  .header__menu {
     border-bottom: 1px solid #ff2f96;
   }
 
-  .menu li:hover {
+  .header__menu-item:hover {
     border-bottom: unset;
   }
 
@@ -301,12 +301,12 @@
     max-width: 680px;
   }
 
-  .first-section__skills-list li {
+  .first-section__skills-list-item {
     width: 300px;
     margin-bottom: 75px;
   }
 
-  .first-section button {
+  .first-section__button {
     width: 320px;
     height: 70px;
     margin: 20px auto 0;
@@ -360,7 +360,7 @@
     width: 280px;
   }
 
-  .first-section__skills-list li {
+  .first-section__skills-list-item {
     margin-bottom: 50px;
     padding-top: 70px;
     display: block;
@@ -368,7 +368,7 @@
     background-size: 60px;
   }
 
-  .first-section button {
+  .first-section__button {
     width: 280px;
     height: 60px;
     margin: 0 auto;
@@ -385,7 +385,7 @@
     margin: 0 auto;
   }
 
-  .examples li span {
+  .examples__item__text {
     margin-top: 12px;
   }
 
@@ -534,7 +534,7 @@
     margin-top: 25px;
   }
 
-  .footer__center a {
+  .footer__center__link {
     font-size: 21px;
     padding-left: 30px;
   }

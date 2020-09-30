@@ -83,17 +83,17 @@ header {
     background: url(../img/closed-menu.png) no-repeat center;
 }
 
-.menu li {
+.header__menu-item {
     display: inline-block;
     margin-left: 30px;
     padding-bottom: 3px;
 }
 
-.menu li:first-child {
+.header__menu-item:first-child {
     margin-left: 0;
 }
 
-.menu li:hover {
+.header__menu-item:hover {
     color: #fc557c;
     border-bottom: 1px solid #fc557c;
 }
@@ -169,11 +169,12 @@ header {
     z-index: 4;
 }
 
-.header-text span {
+.header-text__myname {
     display: block;
 }
 
 .header-text__myprofession {
+    display: block;
     font-size: 25.5px;
     font-weight: 400;
     margin-top: 37px;
