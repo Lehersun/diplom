@@ -8,7 +8,7 @@ $(document).ready(function () {
   //Меню
   $(".header__top__menu-button").click(function () {
     $(".header__top__menu-button").toggleClass("header__top__menu-button__opened");
-    $(".header__top nav").slideToggle(".header__top nav");
+    $(".header__top nav").slideToggle();
   });
 
   $("nav a").on("click", function (event) {
