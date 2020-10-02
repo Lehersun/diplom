@@ -7,7 +7,7 @@ main section {
     padding: 98px 0;
 }
 
-main h1 {
+main h2 {
     font-size: 54px;
     font-weight: 700;
     text-align: center;
@@ -59,10 +59,6 @@ main h1 {
 .first-section__button {
     display: block;
     font-size: 19px;
-    color: white;
-    background-color: #ff4e2e;
-    height: 60px;
-    width: 270px;
     margin: 92px auto 0;
 }
 
@@ -73,12 +69,6 @@ main h1 {
     font-size: 20.5px;
 }
 
-.first-section__button:hover {
-    color: whitesmoke;
-    background-color: red;
-}
-
-
 .examples {
     position: relative;
     display: flex;
@@ -87,33 +77,24 @@ main h1 {
 
 }
 
-.examples__item__img {
+.examples__img {
     margin: 0 auto;
 
 }
 
-.examples__item__text {
+.examples__text {
     color: #8993ad;
     margin-top: 35px;
     display: block;
     text-align: center;
 }
 
-.examples__item__text:hover {
+.examples__text:hover {
     color: #fc557c;
 }
 
-.second__section__button {
+.second-section__button {
     display: block;
     font-size: 19px;
-    color: white;
-    background-color: #ff4e2e;
-    height: 60px;
-    width: 270px;
     margin: 100px auto 0;
-}
-
-.second__section__button:hover {
-    color: whitesmoke;
-    background-color: red;
 }

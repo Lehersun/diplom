@@ -5,25 +5,25 @@
 
 }
 
-.footer__left {
+.footer__menu {
     margin-top: 10px;
     width: 270px;
 }
 
-.footer__left__menu-item {
+.footer__menu-item {
     margin-bottom: 19px;
     color: #8993ad;
     font-size: 18.5px;
 
 }
 
-.footer__left__menu-item__link:hover {
+.footer__menu-link:hover {
     color: #fc557c;
     border-bottom: 1px solid #fc557c;
 }
 
 
-.footer__left__menu-item :last-child {
+.footer__menu-item :last-child {
     margin-bottom: 0;
 }
 
@@ -31,13 +31,13 @@
     margin: 10px 210px 0 130px;
 }
 
-.footer__center__link {
+.footer__center-link {
     display: block;
     padding-left: 40px;
     font-size: 26px;
 }
 
-.footer__center__link:hover {
+.footer__center-link:hover {
     color: red;
 }
 
@@ -56,17 +56,8 @@
 
 .footer__call-button {
     font-size: 16.6px;
-    height: 45px;
     width: 250px;
-    color: #f53f4f;
-    background-color: #fbfbfb;
-    border: 1px solid #f53f4f;
     margin-bottom: 20px;
-}
-
-.footer__call-button:hover {
-    color: whitesmoke;
-    background-color: red;
 }
 
 .vk {
@@ -85,7 +76,7 @@
     background: url(../img/inst.png) no-repeat;
 }
 
-.socials-item {
+.socials__item {
     width: 40px;
     height: 40px;
     background-position: center bottom;
@@ -93,15 +84,15 @@
     margin-right: 10px;
 }
 
-.socials-item:hover {
+.socials__item:hover {
     filter: saturate(50);
 }
 
-.socials-item:last-child {
+.socials__item:last-child {
     margin-right: 0;
 }
 
-.socials-item__link {
+.socials__item-link {
     display: block;
     height: 100%;
 }

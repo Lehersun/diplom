@@ -96,3 +96,22 @@ button {
 button:hover {
   cursor: pointer;
 }
+
+.white-button {
+  height: 45px;
+  color: #f53f4f;
+  background-color: #fbfbfb;
+  border: 1px solid #f53f4f;
+}
+
+.red-button {
+  color: white;
+  background-color: #ff4e2e;
+  height: 60px;
+  width: 270px;
+}
+
+.button:hover {
+  color: whitesmoke;
+  background-color: red;
+}

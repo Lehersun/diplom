@@ -19,7 +19,7 @@
     padding-right: 40px;
   }
 
-  .header__top__menu-button {
+  .header__menu-button {
     display: block;
   }
 
@@ -69,7 +69,7 @@
     right: -20px;
   }
 
-  .header-text__myprofession__button {
+  .header-text__button {
     width: 320px;
   }
 
@@ -115,7 +115,7 @@
     height: 650px;
   }
 
-  .header__top {
+  .header_top {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -144,7 +144,7 @@
     width: 250px;
   }
 
-  .visual-container__man-shade__man {
+  .visual-container__man {
     top: unset;
     bottom: 30px;
     left: 25px;
@@ -171,12 +171,8 @@
     line-height: 20px;
   }
 
-  .header-text__myprofession__button {
+  .header-text__button {
     font-size: 18px;
-    color: white;
-    background-color: #ff4e2e;
-    height: 60px;
-    width: 270px;
     margin-top: 0px;
   }
 }
@@ -215,42 +211,42 @@
     transform: rotate(-30deg);
   }
 
-  .header__top nav {
+  .header_top nav {
     top: 70px;
     font-size: 16px;
   }
 
-  .header__top__right {
+  .header_top_right {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 220px;
   }
 
-  .call-button {
+  .header__call-button {
     height: 26px;
     width: 26px;
     background: url(../img/call-answer-top.png) no-repeat center;
     border: none;
   }
 
-  .call-button:hover {
+  .header__call-button:hover {
     filter: saturate(10);
     background-color: unset;
   }
 
-  .call-button span {
+  .header__call-button span {
     display: none;
   }
 
-  .header__top__right__phone-number {
+  .header__phone-number {
     font-size: 18.5px;
     font-weight: bold;
     margin-right: 0;
     height: 100%;
   }
 
-  .header__top__menu-button {
+  .header__menu-button {
     width: 26px;
     height: 26px;
     background-size: contain;
@@ -260,12 +256,9 @@
     height: 418px;
   }
 
-  .header-text__myprofession__button {
+  .header-text__button {
     font-size: 16.5px;
-    color: white;
-    background-color: #ff4e2e;
     height: 50px;
-    width: 270px;
     margin-top: 10px;
   }
 }
@@ -330,7 +323,7 @@
     margin-top: 50px;
   }
 
-  .second__section__button {
+  .second-section__button {
     width: 320px;
     height: 70px;
     margin: 10px auto;
@@ -342,7 +335,7 @@
     padding: 53px 0;
   }
 
-  main h1 {
+  main h2 {
     font-size: 30px;
     margin-bottom: 45px;
     padding-left: 20px;
@@ -385,11 +378,11 @@
     margin: 0 auto;
   }
 
-  .examples__item__text {
+  .examples__text {
     margin-top: 12px;
   }
 
-  .second__section__button {
+  .second-section__button {
     width: 280px;
     height: 60px;
     font-size: 17px;
@@ -415,26 +408,26 @@
 /* ASIDE */
 
 @media (max-width: 1500px) {
-  .aside__symbol1 {
+  .aside-symbol1 {
     top: 30px;
     left: 150px;
     font-size: 30px;
   }
 
-  .aside__symbol2 {
+  .aside-symbol2 {
     display: none;
   }
 
-  .aside__symbol3 {
+  .aside-symbol3 {
     right: 450px;
     font-size: 26px;
   }
 
-  .aside__symbol4 {
+  .aside-symbol4 {
     display: none;
   }
 
-  .aside__symbol5 {
+  .aside-symbol5 {
     top: unset;
     bottom: 20px;
     right: 85px;
@@ -476,7 +469,7 @@
     height: 437px;
   }
 
-  .aside__symbols {
+  .aside-symbols {
     display: none;
   }
 }
@@ -502,7 +495,7 @@
     justify-content: space-between;
   }
 
-  .footer__left {
+  .footer__menu {
     width: 18%;
   }
 
@@ -534,7 +527,7 @@
     margin-top: 25px;
   }
 
-  .footer__center__link {
+  .footer__center-link {
     font-size: 21px;
     padding-left: 30px;
   }

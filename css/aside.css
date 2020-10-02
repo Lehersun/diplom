@@ -5,7 +5,7 @@ aside {
     color: white;
 }
 
-.aside__symbols {
+.aside-symbols {
     position: absolute;
     height: 50px;
     background-color: white;
@@ -19,35 +19,35 @@ aside {
     font-weight: 900;
 }
 
-.aside__symbol1 {
+.aside-symbol1 {
     top: 68px;
     left: 125px;
     font-size: 50px;
     transform: rotate(30deg);
 }
 
-.aside__symbol2 {
+.aside-symbol2 {
     top: 260px;
     left: 245px;
     font-size: 55px;
     transform: rotate(20deg);
 }
 
-.aside__symbol3 {
+.aside-symbol3 {
     bottom: 7px;
     right: 410px;
     font-size: 38px;
     transform: rotate(20deg);
 }
 
-.aside__symbol4 {
+.aside-symbol4 {
     bottom: 50px;
     right: 105px;
     font-size: 50px;
     transform: rotate(-20deg);
 }
 
-.aside__symbol5 {
+.aside-symbol5 {
     top: 82px;
     right: 204px;
     font-size: 40px;

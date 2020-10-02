@@ -1,268 +1,361 @@
 <!DOCTYPE html>
 <html lang="ru">
+  <head>
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
 
-<head>
-  <meta name="viewport"
-    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
 
-  <meta charset="utf-8" />
-  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" type="text/css" href="css/fonts.css" />
 
-  <link rel="stylesheet" type="text/css" href="css/fonts.css" />
+    <link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
+    <link rel="stylesheet" type="text/css" href="css/owl.theme.default.css" />
 
-  <link rel="stylesheet" type="text/css" href="css/owl.carousel.css" />
-  <link rel="stylesheet" type="text/css" href="css/owl.theme.default.css" />
+    <link rel="stylesheet" type="text/css" href="css/css.css" />
+    <link rel="stylesheet" type="text/css" href="css/header.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+    <link rel="stylesheet" type="text/css" href="css/aside.css" />
+    <link rel="stylesheet" type="text/css" href="css/footer.css" />
+    <link rel="stylesheet" type="text/css" href="css/popup.css" />
+    <link rel="stylesheet" type="text/css" href="css/media.css" />
 
-  <link rel="stylesheet" type="text/css" href="css/css.css" />
-  <link rel="stylesheet" type="text/css" href="css/header.css" />
-  <link rel="stylesheet" type="text/css" href="css/main.css" />
-  <link rel="stylesheet" type="text/css" href="css/aside.css" />
-  <link rel="stylesheet" type="text/css" href="css/footer.css" />
-  <link rel="stylesheet" type="text/css" href="css/popup.css" />
-  <link rel="stylesheet" type="text/css" href="css/media.css" />
+    <script defer src="JS/jquery-3.5.1.min.js"></script>
+    <script defer src="JS/owl.carousel.js"></script>
+    <script defer src="JS/modernizr-custom.js"></script>
+    <script defer src="JS/jquery.mask.min.js"></script>
+    <script defer src="JS/disable-scroll.js"></script>
+    <script defer src="JS/validator/jquery.validate.min.js"></script>
+    <script defer src="JS/validator/localization/messages_ru.min.js"></script>
+    <script defer src="JS/js.js"></script>
 
-  <script defer src="JS/jquery-3.5.1.min.js"></script>
-  <script defer src="JS/owl.carousel.js"></script>
-  <script defer src="JS/modernizr-custom.js"></script>
-  <script defer src="JS/jquery.mask.min.js"></script>
-  <script defer src="JS/disable-scroll.js"></script>
-  <script defer src="JS/validator/jquery.validate.min.js"></script>
-  <script defer src="JS/validator/localization/messages_ru.min.js"></script>
-  <script defer src="JS/js.js"></script>
+    <title>Дипломная работа Бойченко Алексея</title>
+  </head>
 
-  <title>Дипломная работа Бойченко Алексея</title>
-</head>
+  <body>
+    <header>
+      <span class="symbol symbol1">{ }</span>
+      <span class="symbol symbol2">#</span>
+      <span class="symbol symbol3">&lt;div&gt;</span>
+      <span class="symbol symbol4">&lt;div&gt;</span>
+      <span class="symbol symbol5">&lt;/&gt;</span>
 
-<body>
-  <header>
-    <span class="symbol symbol1">{ }</span>
-    <span class="symbol symbol2">#</span>
-    <span class="symbol symbol3">&lt;div&gt;</span>
-    <span class="symbol symbol4">&lt;div&gt;</span>
-    <span class="symbol symbol5">&lt;/&gt;</span>
+      <div class="fixed-container header">
+        <div class="header_top">
+          <button
+            class="header__menu-button"
+            type="button"
+            aria-label="Кнопка меню"
+          ></button>
 
-    <div class="fixed-container header">
-      <div class="header__top">
-        <button class="header__top__menu-button" type="menu" aria-label="Кнопка меню"></button>
+          <nav class="header__menu-container">
+            <ul class="header__menu">
+              <li class="header__menu-item"><a href="#first">Услуги</a></li>
+              <li class="header__menu-item"><a href="#second">Портфолио</a></li>
+              <li class="header__menu-item"><a href="#aside">Стоимость</a></li>
+            </ul>
+          </nav>
 
-        <nav class="header__menu-container">
-          <ul class="header__menu">
-            <li class="header__menu-item"><a href="#first">Услуги</a></li>
-            <li class="header__menu-item"><a href="#second">Портфолио</a></li>
-            <li class="header__menu-item"><a href="#aside">Стоимость</a></li>
-          </ul>
-        </nav>
+          <div class="header_top_right">
+            <a href="tel:+74999955577" class="header__phone-number"
+              >+7 (499) 995-55-77</a
+            >
+            <button
+              class="header__call-button button white-button"
+              type="button"
+            >
+              <span>Заказать звонок</span>
+            </button>
+          </div>
+        </div>
+        <div class="visual-container">
+          <div class="visual-container__eclipse"></div>
 
-        <div class="header__top__right">
-          <a href="tel:+74999955577" class="header__top__right__phone-number">+7 (499) 995-55-77</a>
-          <button class="call-button popupminbutton" type="button">
-            <span>Заказать звонок</span>
+          <div class="visual-container__man-shade">
+            <div class="visual-container__man"></div>
+          </div>
+        </div>
+
+        <div class="header-text">
+          <span class="header-text__myname">Дмитрий Алексеев</span>
+
+          <span class="header-text__myprofession"
+            >Frontend-разработчик и веб-верстальщик</span
+          >
+
+          <button class="header-text__button red-button button" type="button">
+            Узнать больше
           </button>
         </div>
       </div>
-      <div class="visual-container">
-        <div class="visual-container__eclipse"></div>
+    </header>
 
-        <div class="visual-container__man-shade">
-          <div class="visual-container__man-shade__man"></div>
+    <main>
+      <h1 class="visually-hidden">Обо мне</h1>
+      <section class="first-section" id="first">
+        <div class="fixed-container">
+          <h2>Что я делаю</h2>
+
+          <ul class="first-section__skills-list">
+            <li class="first-section__skills-list-item">
+              <a href="#"
+                >Верстка лендинг-страниц и&nbsp;сайтов&nbsp;любой сложности</a
+              >
+            </li>
+
+            <li class="first-section__skills-list-item">
+              <a href="#"
+                >Адаптивная вёрстка под все браузеры и&nbsp;устройства</a
+              >
+            </li>
+
+            <li class="first-section__skills-list-item">
+              <a href="#">Frontend-разработка и&nbsp;программирование</a>
+            </li>
+
+            <li class="first-section__skills-list-item">
+              <a href="#">Исправление и&nbsp;доработка существующей вёрстки</a>
+            </li>
+          </ul>
+
+          <button class="first-section__button red-button button" type="button">
+            Узнать стоимость
+          </button>
+        </div>
+      </section>
+      <section class="second-section" id="second">
+        <div class="fixed-container">
+          <h2>Примеры моих работ</h2>
+
+          <ul class="owl-carousel owl-theme examples">
+            <li>
+              <a href="#">
+                <img
+                  class="examples__img"
+                  src="img/site1.webp"
+                  alt="Сайт психолога Веры Антоновой"
+                />
+                <span class="examples__text"
+                  >Сайт психолога Веры Антоновой</span
+                >
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <img
+                  class="examples__img"
+                  src="img/site2.webp"
+                  alt="Сайт магазина детской одежды"
+                />
+                <span class="examples__text">Сайт магазина детской одежды</span>
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <img
+                  class="examples__img"
+                  src="img/site3.webp"
+                  alt="Сайт магазина Рыболов"
+                />
+                <span class="examples__text"
+                  >Сайт магазина &laquo;Рыболов&raquo;</span
+                >
+              </a>
+            </li>
+
+            <li>
+              <a href="#">
+                <img
+                  class="examples__img"
+                  src="img/site3.webp"
+                  alt="Сайт магазина Рыболов"
+                />
+                <span class="examples__text"
+                  >Сайт магазина &laquo;Рыболов&raquo;</span
+                >
+              </a>
+            </li>
+          </ul>
+
+          <button class="second-section__button red-button button">
+            Заказать проект
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <aside id="aside">
+      <span class="aside-symbols aside-symbol1">{ }</span>
+      <span class="aside-symbols aside-symbol2">#</span>
+      <span class="aside-symbols aside-symbol3">&lt;div&gt;</span>
+      <span class="aside-symbols aside-symbol4">{ }</span>
+      <span class="aside-symbols aside-symbol5">&lt;/&gt;</span>
+
+      <div class="fixed-container">
+        <span class="aside__text1">
+          Адаптивная вёрстка под все устройства и&nbsp;браузеры от
+          1000&nbsp;рублей всего за&nbsp;4&nbsp;часа.*
+        </span>
+
+        <span class="aside__text2">
+          * Срок и стоимость могут отличаться от заявленных и рассчитываются
+          индивидуально, в&nbsp;зависимости от сложности задач
+        </span>
+      </div>
+    </aside>
+
+    <footer>
+      <div class="footer fixed-container">
+        <nav class="footer__menu">
+          <ul class="footer__menu">
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#first">Услуги</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#second">Портфолио</a>
+            </li>
+            <li class="footer__menu-item">
+              <a class="footer__menu-link" href="#aside">Стоимость</a>
+            </li>
+          </ul>
+        </nav>
+        <div class="footer__center">
+          <a href="tel:+74999955577" class="footer__center-link call-answer"
+            >+7 (499) 995-77-55</a
+          >
+          <a
+            href="mailto:dmitry@alekseev.com"
+            class="footer__center-link envelope"
+            >dmitry@alekseev.com</a
+          >
+        </div>
+        <div class="footer__right">
+          <button type="button" class="footer__call-button white-button button">
+            Заказать звонок
+          </button>
+          <ul class="socials">
+            <li class="socials__item vk">
+              <a
+                class="socials__item-link"
+                target="_blank"
+                href="https://vk.com/share.php?url=http://lehersun.ru"
+              ></a>
+            </li>
+            <li class="socials__item fb">
+              <a
+                class="socials__item-link"
+                target="_blank"
+                href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"
+              ></a>
+            </li>
+            <li class="socials__item tw">
+              <a class="socials__item-link" href="#"></a>
+            </li>
+            <li class="socials__item inst">
+              <a class="socials__item-link" href="#"></a>
+            </li>
+          </ul>
         </div>
       </div>
+      <span class="copyright">&copy; Бойченко Алексей, 2020 &ndash; 2020</span>
+    </footer>
 
-      <div class="header-text">
-        <span class="header-text__myname">Дмитрий Алексеев</span>
+    <div class="popup-background">
+      <div class="popup-window">
+        <h2 class="popup-window__head">Форма обратной связи</h2>
+        <form id="formmin">
+          <label class="popup-window__label"
+            >* Номер телефона
+            <input
+              class="popup-window__phone"
+              type="text"
+              name="phone"
+              placeholder="+7(123)456-78-90"
+            />
+          </label>
 
-        <span class="header-text__myprofession">Frontend-разработчик и веб-верстальщик</span>
+          <label class="popup-window__label"
+            >* Имя
+            <input
+              class="popup-window__name"
+              name="name"
+              placeholder="Джон"
+              maxlength="30"
+            />
+          </label>
 
-        <button class="header-text__myprofession__button popupmaxbutton" type="button">
-          Узнать больше
-        </button>
+          <button class="popup-window__send-button" type="submit" value="send">
+            Заказать звонок
+          </button>
+        </form>
+
+        <button
+          class="popup-window__close-button"
+          type="button"
+          name="popup-window__close-button"
+        ></button>
       </div>
     </div>
-  </header>
 
-  <main>
-    <section class="first-section" id="first">
-      <div class="fixed-container">
-        <h1 class="first-section__head">Что я делаю</h1>
+    <div class="popup-background">
+      <div class="popup-window popupmax">
+        <h2 class="popup-window__head">Форма обратной связи</h2>
 
-        <ul class="first-section__skills-list">
-          <li class="first-section__skills-list-item">
-            <a href="#">Верстка лендинг-страниц и&nbsp;сайтов&nbsp;любой сложности</a>
-          </li>
+        <form id="formmax">
+          <label
+            >* Номер телефона
+            <input
+              class="popup-window__phone"
+              type="text"
+              name="phone"
+              placeholder="+7(123)456-78-90"
+            />
+          </label>
 
-          <li class="first-section__skills-list-item">
-            <a href="#">Адаптивная вёрстка под все браузеры и&nbsp;устройства</a>
-          </li>
+          <label class="popup-window__label"
+            >* Имя
+            <input
+              class="popup-window__name"
+              name="name"
+              placeholder="Джон"
+              maxlength="30"
+            />
+          </label>
 
-          <li class="first-section__skills-list-item">
-            <a href="#">Frontend-разработка и&nbsp;программирование</a>
-          </li>
+          <label class="popup-window__label"
+            >* E-mail адрес
+            <input
+              class="popup-window-e-mail"
+              name="email"
+              placeholder="example@example.ru"
+              maxlength="40"
+            />
+          </label>
 
-          <li class="first-section__skills-list-item">
-            <a href="#">Исправление и&nbsp;доработка существующей вёрстки</a>
-          </li>
-        </ul>
+          <label class="popup-window__label">
+            Дополнительная информация
+            <textarea
+              class="popup-window__comment"
+              name="comment"
+              placeholder="Что нам стоит дом построить?"
+              maxlength="400"
+            ></textarea>
+          </label>
+          <button class="popup-window__send-button" type="submit" value="send">
+            Заказать звонок
+          </button>
+        </form>
 
-        <button class="first-section__button popupmaxbutton" type="button">
-          Узнать стоимость
-        </button>
-      </div>
-    </section>
-    <section class="second-section" id="second">
-      <div class="fixed-container">
-        <h1>Примеры моих работ</h1>
-
-        <ul class="owl-carousel owl-theme examples">
-          <li class="examples__item">
-            <a href="#">
-              <img class="examples__item__img" src="img/site1.webp" alt="Сайт психолога Веры Антоновой" />
-              <span class="examples__item__text">Сайт психолога Веры Антоновой</span>
-            </a>
-          </li>
-
-          <li class="examples__item">
-            <a href="#">
-              <img class="examples__item__img" src="img/site2.webp" alt="Сайт магазина детской одежды" />
-              <span class="examples__item__text">Сайт магазина детской одежды</span>
-            </a>
-          </li>
-
-          <li class="examples__item">
-            <a href="#">
-              <img class="examples__item__img" src="img/site3.webp" alt="Сайт магазина Рыболов" />
-              <span class="examples__item__text">Сайт магазина &laquo;Рыболов&raquo;</span>
-            </a>
-          </li>
-
-          <li class="examples__item">
-            <a href="#">
-              <img class="examples__item__img" src="img/site3.webp" alt="Сайт магазина Рыболов" />
-              <span class="examples__item__text">Сайт магазина &laquo;Рыболов&raquo;</span>
-            </a>
-          </li>
-        </ul>
-
-        <button class="second__section__button popupmaxbutton">
-          Заказать проект
-        </button>
-      </div>
-    </section>
-  </main>
-
-  <aside id="aside">
-    <span class="aside__symbols aside__symbol1">{ }</span>
-    <span class="aside__symbols aside__symbol2">#</span>
-    <span class="aside__symbols aside__symbol3">&lt;div&gt;</span>
-    <span class="aside__symbols aside__symbol4">{ }</span>
-    <span class="aside__symbols aside__symbol5">&lt;/&gt;</span>
-
-    <div class="fixed-container">
-      <span class="aside__text1">
-        Адаптивная вёрстка под все устройства и&nbsp;браузеры от
-        1000&nbsp;рублей всего за&nbsp;4&nbsp;часа.*
-      </span>
-
-      <span class="aside__text2">
-        * Срок и стоимость могут отличаться от заявленных и рассчитываются
-        индивидуально, в&nbsp;зависимости от сложности задач
-      </span>
-    </div>
-  </aside>
-
-  <footer>
-    <div class="footer fixed-container">
-      <nav class="footer__left">
-        <ul class="footer__left__menu">
-          <li class="footer__left__menu-item">
-            <a class="footer__left__menu-item__link" href="#first">Услуги</a>
-          </li>
-          <li class="footer__left__menu-item">
-            <a class="footer__left__menu-item__link" href="#second">Портфолио</a>
-          </li>
-          <li class="footer__left__menu-item">
-            <a class="footer__left__menu-item__link" href="#aside">Стоимость</a>
-          </li>
-        </ul>
-      </nav>
-      <div class="footer__center">
-        <a href="tel:+74999955577" class="footer__center__link call-answer">+7 (499) 995-77-55</a>
-        <a href="mailto:dmitry@alekseev.com" class="footer__center__link envelope">dmitry@alekseev.com</a>
-      </div>
-      <div class="footer__right">
-        <button type="button" class="footer__call-button popupminbutton">
-          Заказать звонок
-        </button>
-        <ul class="socials">
-          <li class="socials-item vk">
-            <a class="socials-item__link" target="_blank" href="https://vk.com/share.php?url=http://lehersun.ru"></a>
-          </li>
-          <li class="socials-item fb">
-            <a class="socials-item__link" target="_blank"
-              href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fdevelopers.facebook.com%2Fdocs%2Fplugins%2F&amp;src=sdkpreparse"></a>
-          </li>
-          <li class="socials-item tw">
-            <a class="socials-item__link" href="#"></a>
-          </li>
-          <li class="socials-item inst">
-            <a class="socials-item__link" href="#"></a>
-          </li>
-        </ul>
+        <button
+          class="popup-window__close-button"
+          type="button"
+          name="popup-window__close-button"
+        ></button>
       </div>
     </div>
-    <span class="copyright">&copy; Бойченко Алексей, 2020 &ndash; 2020</span>
-  </footer>
-
-  <div class="popup-background">
-    <div class="popup-window">
-      <h1 class="popup-window__head">Форма обратной связи</h1>
-      <form class="formmin">
-        <label class="popup-window__label">* Номер телефона
-          <input class="popup-window__phone" type="text" name="phone" placeholder="+7(123)456-78-90" />
-        </label>
-
-        <label class="popup-window__label">* Имя
-          <input class="popup-window__name" name="name" placeholder="Джон" maxlength="30" />
-        </label>
-
-        <button class="popup-window__send-button" type="submit" value="send">
-          Заказать звонок
-        </button>
-      </form>
-
-      <button class="popup-window__close-button" type="button" name="popup-window__close-button"></button>
-    </div>
-  </div>
-
-  <div class="popup-background">
-    <div class="popup-window popupmax">
-      <h1 class="popup-window__head">Форма обратной связи</h1>
-
-      <form class="formmax">
-        <label>* Номер телефона
-          <input class="popup-window__phone" type="text" name="phone" placeholder="+7(123)456-78-90" />
-        </label>
-
-        <label class="popup-window__label">* Имя
-          <input class="popup-window__name" name="name" placeholder="Джон" maxlength="30" />
-        </label>
-
-        <label class="popup-window__label">* E-mail адрес
-          <input class="popup-window-e-mail" name="email" placeholder="example@example.ru" maxlength="40" />
-        </label>
-
-        <label class="popup-window__label">
-          Дополнительная информация
-          <textarea class="popup-window-comment" name="comment" placeholder="Что нам стоит дом построить?"
-            maxlength="400"></textarea>
-        </label>
-        <button class="popup-window__send-button" type="submit" value="send">
-          Заказать звонок
-        </button>
-      </form>
-
-      <button class="popup-window__close-button" type="button" name="popup-window__close-button"></button>
-    </div>
-  </div>
-</body>
-
+  </body>
 </html>

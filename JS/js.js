@@ -6,9 +6,9 @@ $(document).ready(function () {
 
 
   //Меню
-  $(".header__top__menu-button").click(function () {
-    $(".header__top__menu-button").toggleClass("header__top__menu-button__opened");
-    $(".header__top nav").slideToggle();
+  $(".header__menu-button").click(function () {
+    $(".header__menu-button").toggleClass("header__menu-button__opened");
+    $(".header_top nav").slideToggle();
   });
 
   $("nav a").on("click", function (event) {
@@ -27,8 +27,8 @@ $(document).ready(function () {
     let screenwidth = $(window).width();
 
     if (screenwidth <= 1200) {
-      $(".header__top__menu-button").toggleClass("header__top__menu-button__opened");
-      $(".header__top nav").slideToggle(".header__top nav");
+      $(".header__menu-button").toggleClass("header__menu-button__opened");
+      $(".header_top nav").slideToggle(".header_top nav");
     }
   });
 
@@ -58,10 +58,10 @@ $(document).ready(function () {
 
   // Всплывающее окно "Заказать звонок"
 
-  const popupmin = $('.formmin').parents(".popup-background");
+  const popupmin = $('#formmin').parents(".popup-background");
 
   // Всплывающее окно "Обратной связи"
-  const popupmax = $('.formmax').parents(".popup-background");
+  const popupmax = $('#formmax').parents(".popup-background");
 
 
 
@@ -170,12 +170,12 @@ $(document).ready(function () {
 
   // Вызов функций на нажатие кнопки
 
-  $(".popupminbutton").click(function () {
+  $(".white-button").click(function () {
     let openpopupmin = openpopup.bind(popupmin); //Передаем функции openpopup параметры переменной popupmin в качестве this
     openpopupmin();
   });
 
-  $(".popupmaxbutton").click(function () {
+  $(".red-button").click(function () {
     let openpopupmax = openpopup.bind(popupmax); //Передаем функции openpopup параметры переменной popupmax в качестве this
     openpopupmax();
   });
@@ -196,11 +196,11 @@ $(document).ready(function () {
     }
   });
 
-  $(".formmax")
+  $("#formmax")
     .children("button")
     .click(function () {
       /*Валидация полей формы*/
-      $(".formmax").validate({
+      $("#formmax").validate({
         //Правила валидации
         rules: {
           name: {
@@ -231,7 +231,7 @@ $(document).ready(function () {
         /*Отправка формы в случае успеха валидации*/
         submitHandler: function () {
           sendAjaxFormmax("formmax", "ajax-form.php"); //Вызываем функцию отправки формы
-          let popup = $(".formmax")
+          let popup = $("#formmax")
             .parent()
             .find(".popup-window__close-button");
           let closepopupmax = closepopup.bind(popup); //Передаем функции closepopup параметры переменной popupmax в качестве this
@@ -241,11 +241,11 @@ $(document).ready(function () {
       });
     });
 
-  $(".formmin")
+  $("#formmin")
     .children("button")
     .click(function () {
       /*Валидация полей формы*/
-      $(".formmin").validate({
+      $("#formmin").validate({
         //Правила валидации
         rules: {
           name: {
@@ -270,7 +270,7 @@ $(document).ready(function () {
         /*Отправка формы в случае успеха валидации*/
         submitHandler: function () {
           sendAjaxFormmin("formmin", "ajax-form.php"); //Вызываем функцию отправки формы
-          let popup = $(".formmin")
+          let popup = $("#formmin")
             .parent()
             .find(".popup-window__close-button");
           let closepopupmin = closepopup.bind(popup); //Передаем функции closepopup параметры переменной popupmax в качестве this
@@ -292,8 +292,8 @@ function sendAjaxFormmax(formmax, url) {
       //Данные отправлены успешно
 
       //Ваш код если успешно отправлено
-      $(".formmax").hide();
-      $(".formmax").parent().append(`
+      $("#formmax").hide();
+      $("#formmax").parent().append(`
         <p class="popup-window__message">Спасибо за заявку! Мы скоро свяжемся с Вами</p>
       `);
       $(".popupmax").animate({
@@ -305,8 +305,8 @@ function sendAjaxFormmax(formmax, url) {
     error: function (response) {
       // Данные не отправлены
       //Ваш код если ошибка
-      $(".formmax").hide();
-      $(".formmax").parent().append(`
+      $("#formmax").hide();
+      $("#formmax").parent().append(`
         <p class="popup-window__message">Ошибка отправления</p>
       `);
       $(".popupmax").animate({
@@ -328,8 +328,8 @@ function sendAjaxFormmin(formmin, url) {
       //Данные отправлены успешно
 
       //Ваш код если успешно отправлено
-      $(".formmin").hide();
-      $(".formmin").parent().append(`
+      $("#formmin").hide();
+      $("#formmin").parent().append(`
         <p class="popup-window__message">Спасибо за заявку! Мы скоро свяжемся с Вами.</p>
       `);
     },
@@ -337,8 +337,8 @@ function sendAjaxFormmin(formmin, url) {
       // Данные не отправлены
       //Ваш код если ошибка
 
-      $(".formmin").hide();
-      $(".formmin").parent().append(`
+      $("#formmin").hide();
+      $("#formmin").parent().append(`
         <p class="popup-window__message">Ошибка отправления</p>
       `);
     },
